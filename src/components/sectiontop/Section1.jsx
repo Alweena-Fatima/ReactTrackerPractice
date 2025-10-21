@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
-// 1. Define the snowflake positions in a static array.
-// These are now hard-coded and will NEVER change on any refresh.
-// You can add/edit/remove these as much as you want.
 const fixedSnowflakes = [
   { left: '10%', top: '20%', fontSize: '12px' },
   { left: '80%', top: '40%', fontSize: '18px' },
@@ -17,7 +13,7 @@ const fixedSnowflakes = [
 ];
 
 const Section1 = () => {
-  // --- Clock State (This part is fine) ---
+  //time current
   const [currentDate, setCurrentDate] = useState(new Date());
 
   useEffect(() => {
@@ -29,12 +25,20 @@ const Section1 = () => {
   // State to store the name and input visibility
   const [name, setName] = useState("");
   const [isEditing, setIsEditing] = useState(true);
-
+  //use useeffect to get the user name from the local storage 
+  useEffect(()=>{
+    const savedname=localStorage.getItem('Username');
+    if(savedname){
+      setName(savedname);
+      setIsEditing(false)
+    }
+  },[]);
   // Function runs when user leaves the input box
   const handleBlur = (e) => {
     const enteredName = e.target.value.trim();
     if (enteredName !== "") {
       setName(enteredName);
+      localStorage.setItem("Username", enteredName);
       setIsEditing(false); // replace input with text
     }
   };
@@ -78,6 +82,7 @@ const Section1 = () => {
               />
             ) : (
               <span className= "text-cyan-400">{name}!</span>
+              
             )}
           </h1>
           <p className="text-gray-300 text-lg">

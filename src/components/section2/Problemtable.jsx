@@ -14,12 +14,11 @@ const Problemtable = ({ problems }) => {
     { left: '33%', top: '33%', fontSize: '13px' },
     { left: '72%', top: '85%', fontSize: '16px' },
   ];
-  // 2. Renamed state to 'selectedSheets' (plural) for clarity
+  //this usestae for chnaging and selecting the sheets 
   const [selectedSheets, setSelectedSheets] = useState([]);
   const sheets = ["Sean", "Neetcode", "Blind 75", "Amazon 6M"];
 
   const handleSheetChange = (sheet) => {
-    // 3. Updated logic to use 'selectedSheets' and 'setSelectedSheets'
     if (selectedSheets.includes(sheet)) {
       setSelectedSheets(selectedSheets.filter((s) => s !== sheet));
     } else {
@@ -44,7 +43,6 @@ const Problemtable = ({ problems }) => {
   return (
     <div className="bg-slate-800 min-h-screen relative overflow-hidden ">
       {/* Subtle snow effect */}
-      {/* Static snow */}
       <div className="absolute inset-0 pointer-events-none">
         {fixedSnowflakes.map((style, i) => (
           <div
