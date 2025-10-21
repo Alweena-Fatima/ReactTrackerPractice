@@ -1,24 +1,52 @@
 import React, { useState, useEffect } from "react";
-
+const STORAGE_KEY="problemprogress";
 const ProblemRow = ({ problem, index }) => {
   const [isDone, setDone] = useState(false);
   const [lastDone, setLastDone] = useState("");
 
-  // Using in-memory storage instead of localStorage
-  useEffect(() => {
-    // You can implement your own state management here
-    // For now, keeping it simple with component state
-  }, [problem.id]);
+  //now load the progress from local storage 
+  useEffect(()=>{
+    try{
+      const raw=localStorage.getItem(STORAGE_KEY);//raw will have object of solved problem like problem id 1 is solved then raw has object isDone is true and lastdate is saved 
+      //raw is in string convert in object
+      const all=raw?JSON.parse(raw):{};
+      const p=all[problem.id];//now all is an object that has id of problem solved by user 
+      //p will traverse each problem id of all check if done then setdone setlast else false
+      if(p){
+        setDone(Boolean(p.isDone));//returen the boolean state of p 
+        setLastDone(p.lastDone ||"");
 
+      }else{
+        setDone(false);
+        setLastDone("");
+      }
+    }catch (err) {
+      console.error("Failed to load progress:", err);
+    }
+  },[problem.id]);//problem.id makes sure the effect runs only when the rows problem is changed
+  //now save state of each problem on local storage 
+  const saveProgressForEachproblem=(id,data)=>{
+    try{
+      const raw=localStorage.getItem(STORAGE_KEY);//raw will have object of solved problem like problem id 1 is solved then raw has object isDone is true and lastdate is saved 
+      //raw is in string convert in object
+      const all=raw?JSON.parse(raw):{};
+      all[id]=data;
+      localStorage.setItem(STORAGE_KEY,JSON.stringify(all));
+    }catch(err){
+      console.error("Failed to saved the progress");
+    }
+  };
   const handleCheck = () => {
-    const today = new Date().toISOString().split("T")[0];
+    const today = new Date().toLocaleDateString('en-CA').split("T")[0];
 
     if (isDone) {
       setDone(false);
       setLastDone("");
+      saveProgressForEachproblem(problem.id,{isDone:false,lastDone:""});//save the progress in local by calling saveProgressForEachproblem function
     } else {
       setDone(true);
       setLastDone(today);
+      saveProgressForEachproblem(problem.id,{isDone:true,lastDone:today});//save the progress in local by calling saveProgressForEachproblem function
     }
   };
 
@@ -55,7 +83,7 @@ const ProblemRow = ({ problem, index }) => {
         />
       </td>
       <td className=" p-3 text-center text-gray-100 text-l font-mono">
-        {lastDone || <span className="text-gray-400">--/--/----</span>}
+        {lastDone || <span className="text-gray-400">----/--/--</span>}
       </td>
 
       <style jsx>{`
