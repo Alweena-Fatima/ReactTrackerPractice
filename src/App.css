@@ -1,0 +1,30 @@
+.Card{
+    margin: 20px;
+    border: 2px solid black;
+    width: 250px;
+    text-align: center;
+    background-color: rgb(55, 129, 129);
+    border-radius: 10px;
+    padding: 20px;
+    h2{
+        align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    }
+    p{
+        color: aliceblue;
+    }
+    button{
+        color: black;
+        height: 50px;
+        background-color: rgb(0, 255, 255);
+        
+    }
+    bottom:hover{
+        transition: ease-in;
+        transform: rotateX(90);
+    }
+}
+.parent{
+    display: flex;
+}
