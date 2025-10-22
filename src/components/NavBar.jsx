@@ -1,37 +1,12 @@
 import React from 'react';
 
 const Navbar = ({setOption}) => {
-    const fixedSnowflakes = [
-  { left: '10%', top: '20%', fontSize: '12px' },
-  
-  { left: '5%', top: '90%', fontSize: '10px' },
-  { left: '25%', top: '50%', fontSize: '15px' },
-  { left: '65%', top: '5%', fontSize: '11px' },
-  { left: '55%', top: '60%', fontSize: '17px' },
-  { left: '33%', top: '33%', fontSize: '13px' },
-  { left: '72%', top: '85%', fontSize: '16px' },
-];
+  //here setoption will tell the app.jsx that if selected page is home or about me 
   return (
     <div className="relative bg-slate-800 border-b-2 border-cyan-800 shadow-lg overflow-hidden">
-      {/* Animated snow effect */}
-      {/* Static snow
-        <div className="absolute inset-0 pointer-events-none">
-        {fixedSnowflakes.map((style, i) => (
-          <div
-            key={i}
-            className="absolute text-white opacity-70"
-            style={style}
-          >
-            ❄
-          </div>
-        ))}
-
-      </div>
-        */}
-      
-
+    
       <div className="flex justify-between items-center px-8 py-4 relative z-10">
-        {/* Left Side - Terminal Logo */}
+        {/* Left Side (website name) */}
         <div className="flex items-center space-x-2 ml-20">
           <span className="text-cyan-400 text-3xl font-mono animate-pulse">❄️</span>
           <span className="text-cyan-400 text-2xl font-mono font-bold">
@@ -40,7 +15,7 @@ const Navbar = ({setOption}) => {
           </span>
         </div>
 
-        {/* Right Side - Terminal Nav */}
+        {/* Right Side(Home about me ) */}
         <ul className="flex space-x-8 font-mono mr-20 text-xl">
           <li className="text-cyan-400 hover:text-emerald-400 cursor-pointer transition duration-300 hover:scale-110">
             <span className="before:content-['$_'] hover:before:content-['>_']" onClick={()=>{setOption('Home')}}>Home</span>
@@ -58,8 +33,7 @@ const Navbar = ({setOption}) => {
         </ul>
       </div>
 
-      {/* Terminal scan line effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-400/5 to-transparent animate-pulse pointer-events-none" />
+      
     </div>
   );
 };
