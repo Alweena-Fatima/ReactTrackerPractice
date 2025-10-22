@@ -184,8 +184,11 @@ const Section1 = () => {
               </p>
               
             </div>
+            
           </div>
+          
         </div>
+        
       </div>
 
 

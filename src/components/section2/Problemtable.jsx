@@ -67,6 +67,7 @@ const Problemtable = ({ problems }) => {
             <span className="text-yellow-400 text-sm">●</span>
             <span className="text-red-400 text-sm">●</span>
             <span className="text-gray-400 text-sm ml-2">problems.db</span>
+            
           </div>
 
           <table className="w-full border-collapse font-mono ">
@@ -85,6 +86,7 @@ const Problemtable = ({ problems }) => {
                 </th>
                 <th className="p-3 text-center">Done</th>
                 <th className="p-3 text-center">Last Done</th>
+                <th className="p-3 text-center">Revison Count</th>
               </tr>
             </thead>
             <tbody>

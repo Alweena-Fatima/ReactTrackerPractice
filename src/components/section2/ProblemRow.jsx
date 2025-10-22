@@ -3,6 +3,7 @@ const STORAGE_KEY="problemprogress";
 const ProblemRow = ({ problem, index,handleStorageChange }) => {
   const [isDone, setDone] = useState(false);
   const [lastDone, setLastDone] = useState("");
+  const [revisonCount,setRevisonCount]=useState(0);
 
   //now load the progress from local storage 
   useEffect(()=>{
@@ -15,10 +16,12 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
       if(p){
         setDone(Boolean(p.isDone));//returen the boolean state of p 
         setLastDone(p.lastDone ||"");
+        setRevisonCount(p.revisonCount || 0);
 
       }else{
         setDone(false);
         setLastDone("");
+        setRevisonCount(0);
       }
     }catch (err) {
       console.error("Failed to load progress:", err);
@@ -40,19 +43,54 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
       console.error("Failed to saved the progress");
     }
   };
+
   const handleCheck = () => {
     const today = new Date().toLocaleDateString('en-CA').split("T")[0];
 
     if (isDone) {
+      //CASE 1: User is UNCHECKING the box 
+      //allow only when the lastdone date is not today 
+      if(lastDone==today){
+        
+        return;
+      }
+      //here lastdone is not today allow checking
+      
       setDone(false);
       setLastDone("");
-      saveProgressForEachproblem(problem.id,{isDone:false,lastDone:""});//save the progress in local by calling saveProgressForEachproblem function
+      // We keep the revision count, as unchecking shouldn't reset progress.
+      
+      saveProgressForEachproblem(problem.id, {
+        isDone: false,
+        lastDone: "",
+        revisonCount: revisonCount // Keep the existing count
+      });
+
     } else {
+      // CASE 2: User is CHECKING the box ---
+      // The box is currently unchecked.
+      
+      let newRevisionCount = revisonCount;
+
+      // Only increment the revision count if the last time it was done
+      // was NOT today. This prevents multiple increments on the same day.
+      if (lastDone !== today) {
+        newRevisionCount = Math.min(revisonCount + 1, 3);
+      }
+
       setDone(true);
       setLastDone(today);
-      saveProgressForEachproblem(problem.id,{isDone:true,lastDone:today});//save the progress in local by calling saveProgressForEachproblem function
+      setRevisonCount(newRevisionCount);
+
+      saveProgressForEachproblem(problem.id, {
+        isDone: true,
+        lastDone: today,
+        revisonCount: newRevisionCount
+      });
     }
   };
+  const today = new Date().toLocaleDateString('en-CA').split("T")[0];
+  let lock=isDone && lastDone === today;
 
   return (
     <tr 
@@ -83,11 +121,17 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
           type="checkbox" 
           checked={isDone} 
           onChange={handleCheck}
+          /** here when locked variable is true disable the checkbox and show warning */
+          disabled={lock}
+          title={lock ? "Completed today! Come back tomorrow to revise." : "Mark as done"}
           className="w-5 h-5 accent-emerald-400 cursor-pointer hover:scale-110 transition-transform"
         />
       </td>
       <td className=" p-3 text-center text-gray-100 text-l font-mono">
         {lastDone || <span className="text-gray-400">----/--/--</span>}
+      </td>
+      <td className=" p-3 text-center text-amber-200">
+          {revisonCount}/3 {revisonCount>=3 && "MASTERED"}
       </td>
 
       <style jsx>{`
