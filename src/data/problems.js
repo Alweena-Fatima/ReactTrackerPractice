@@ -5,7 +5,7 @@ export const problems = [
     "number": 1,
     "title": "3Sum",
     "link": "https://leetcode.com/problems/3sum/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 2,
@@ -19,21 +19,21 @@ export const problems = [
     "number": 3,
     "title": "Add Two Numbers",
     "link": "https://leetcode.com/problems/add-two-numbers/",
-    "sheets": ["Amazon 6M", "Neetcode", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Sean Prashad"]
   },
   {
     "id": 4,
     "number": 4,
     "title": "Alien Dictionary",
     "link": "https://leetcode.com/problems/alien-dictionary/",
-    "sheets": ["Neetcode", "Blind", "Sean"]
+    "sheets": ["Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 5,
     "number": 5,
     "title": "All Nodes Distance K in Binary Tree",
     "link": "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 6,
@@ -47,14 +47,14 @@ export const problems = [
     "number": 7,
     "title": "Average of Levels in Binary Tree",
     "link": "https://leetcode.com/problems/average-of-levels-in-binary-tree/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 8,
     "number": 8,
     "title": "Backspace String Compare",
     "link": "https://leetcode.com/problems/backspace-string-compare/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 9,
@@ -82,7 +82,7 @@ export const problems = [
     "number": 12,
     "title": "Best Time to Buy and Sell Stock",
     "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 13,
@@ -96,56 +96,56 @@ export const problems = [
     "number": 14,
     "title": "Best Time to Buy/Sell Stock With Cooldown",
     "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 15,
     "number": 15,
     "title": "Binary Search",
     "link": "https://leetcode.com/problems/binary-search/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 16,
     "number": 16,
     "title": "Binary Tree Level Order Traversal",
     "link": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 17,
     "number": 17,
     "title": "Binary Tree Level Order Traversal II",
     "link": "https://leetcode.com/problems/binary-tree-level-order-traversal-ii/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 18,
     "number": 18,
     "title": "Binary Tree Max Path Sum",
     "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
-    "sheets": ["Neetcode", "Blind", "Sean"]
+    "sheets": ["Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 19,
     "number": 19,
     "title": "Binary Tree Paths",
     "link": "https://leetcode.com/problems/binary-tree-paths/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 20,
     "number": 20,
     "title": "Binary Tree Right Side View",
     "link": "https://leetcode.com/problems/binary-tree-right-side-view/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 21,
     "number": 21,
     "title": "Binary Tree Zigzag Level Order Traversal",
     "link": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
-    "sheets": ["Amazon 6M", "Sean"]
+    "sheets": ["Amazon 6M", "Sean Prashad"]
   },
   {
     "id": 22,
@@ -194,7 +194,7 @@ export const problems = [
     "number": 28,
     "title": "Climbing Stairs",
     "link": "https://leetcode.com/problems/climbing-stairs/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 29,
@@ -208,7 +208,7 @@ export const problems = [
     "number": 30,
     "title": "Coin Change",
     "link": "https://leetcode.com/problems/coin-change/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 31,
@@ -227,7 +227,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/combination-sum/",
     "sheets": [
       "Neetcode",
-      "sean",
+      "Sean Prashad",
       "blind"
     ]
   },
@@ -238,7 +238,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/combination-sum-ii/",
     "sheets": [
       "Neetcode",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -247,7 +247,7 @@ export const problems = [
     "title": "Combination Sum III",
     "link": "https://leetcode.com/problems/combination-sum-iii/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -256,7 +256,7 @@ export const problems = [
     "title": "Combination Sum IV",
     "link": "https://leetcode.com/problems/combination-sum-iv/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -265,7 +265,7 @@ export const problems = [
     "title": "Combinations",
     "link": "https://leetcode.com/problems/combinations/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -274,7 +274,7 @@ export const problems = [
     "title": "Concatenated Words",
     "link": "https://leetcode.com/problems/concatenated-words/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -285,7 +285,7 @@ export const problems = [
     "sheets": [
       "Blind",
       "neetcode",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -297,7 +297,7 @@ export const problems = [
       "Amazon 6M",
       "Neetcode",
       "Blind",
-      "Sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -307,7 +307,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/contains-duplicate/",
     "sheets": [
       "Neetcode",
-      "sean",
+      "Sean Prashad",
       "blind"
     ]
   },
@@ -317,7 +317,7 @@ export const problems = [
     "title": "Convert 1D Array Into 2D Array",
     "link": "https://leetcode.com/problems/convert-1d-array-into-2d-array/description/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -345,7 +345,7 @@ export const problems = [
     "title": "Count of Range Sum",
     "link": "https://leetcode.com/problems/count-of-range-sum/description/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -354,7 +354,7 @@ export const problems = [
     "title": "Count Unique Characters of All Substrings of a Given String",
     "link": "https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -374,7 +374,7 @@ export const problems = [
     "sheets": [
       "Neetcode",
       "blind",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -386,7 +386,7 @@ export const problems = [
       "Amazon 6M",
       "Neetcode",
       "Blind",
-      "Sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -397,7 +397,7 @@ export const problems = [
     "sheets": [
       "Amazon 6M",
       "neetcode",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -406,7 +406,7 @@ export const problems = [
     "title": "Course Schedule III",
     "link": "https://leetcode.com/problems/course-schedule-iii/description/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -435,7 +435,7 @@ export const problems = [
     "sheets": [
       "Neetcode",
       "blind",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -499,7 +499,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/design-search-autocomplete-system/",
     "sheets": [
       "Amazon 6M",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -536,7 +536,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/linked-list-cycle/",
     "sheets": [
       "Blind",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -556,7 +556,7 @@ export const problems = [
     "sheets": [
       "Amazon 6M",
       "neetcode",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -583,7 +583,7 @@ export const problems = [
     "title": "Employee Free Time",
     "link": "https://leetcode.com/problems/employee-free-time/description/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -612,7 +612,7 @@ export const problems = [
     "title": "Factor Combinations",
     "link": "https://leetcode.com/problems/factor-combinations/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -621,7 +621,7 @@ export const problems = [
     "title": "Find All Duplicates in an Array",
     "link": "https://leetcode.com/problems/find-all-duplicates-in-an-array/description/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -630,7 +630,7 @@ export const problems = [
     "title": "Find All Numbers Disappeared in an Array",
     "link": "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -648,7 +648,7 @@ export const problems = [
     "title": "Find K Closest Elements",
     "link": "https://leetcode.com/problems/find-k-closest-elements/description/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -657,7 +657,7 @@ export const problems = [
     "title": "Find K Pairs with Smallest Sums",
     "link": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -669,7 +669,7 @@ export const problems = [
       "Amazon 6M",
       "Neetcode",
       "Blind",
-      "Sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -680,7 +680,7 @@ export const problems = [
     "sheets": [
       "Neetcode",
       "blind",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -689,7 +689,7 @@ export const problems = [
     "title": "Find Peak Element",
     "link": "https://leetcode.com/problems/find-peak-element/description/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -698,7 +698,7 @@ export const problems = [
     "title": "Find Smallest Letter Greater Than Target",
     "link": "https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -726,7 +726,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/find-the-duplicate-number/",
     "sheets": [
       "Neetcode",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -735,7 +735,7 @@ export const problems = [
     "title": "First Missing Positive",
     "link": "https://leetcode.com/problems/first-missing-positive/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -744,7 +744,7 @@ export const problems = [
     "title": "Fruit Into Baskets",
     "link": "https://leetcode.com/problems/fruit-into-baskets/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -754,7 +754,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/gas-station/",
     "sheets": [
       "Neetcode",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -763,7 +763,7 @@ export const problems = [
     "title": "Generalized Abbreviation",
     "link": "https://leetcode.com/problems/generalized-abbreviation/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -774,7 +774,7 @@ export const problems = [
     "sheets": [
       "Amazon 6M",
       "neetcode",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -786,7 +786,7 @@ export const problems = [
       "Amazon 6M",
       "neetcode",
       "blind",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -827,7 +827,7 @@ export const problems = [
       "Amazon 6M",
       "neetcode",
       "blind",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -838,7 +838,7 @@ export const problems = [
     "sheets": [
       "Neetcode",
       "blind",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -849,7 +849,7 @@ export const problems = [
     "sheets": [
       "Neetcode",
       "blind",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -858,7 +858,7 @@ export const problems = [
     "title": "Index Pairs of a String",
     "link": "https://leetcode.com/problems/index-pairs-of-a-string/description/",
     "sheets": [
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -878,7 +878,7 @@ export const problems = [
     "sheets": [
       "Neetcode",
       "blind",
-      "sean"
+      "Sean Prashad"
     ]
   },
   {
@@ -909,21 +909,21 @@ export const problems = [
     "number": 103,
     "title": "Invert/Flip Binary Tree",
     "link": "https://leetcode.com/problems/invert-binary-tree/",
-    "sheets": ["Blind", "Sean"]
+    "sheets": ["Blind", "Sean Prashad"]
   },
   {
     "id": 104,
     "number": 104,
     "title": "Is Subsequence",
     "link": "https://leetcode.com/problems/is-subsequence/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 105,
     "number": 105,
     "title": "Jump Game",
     "link": "https://leetcode.com/problems/jump-game/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 106,
@@ -937,7 +937,7 @@ export const problems = [
     "number": 107,
     "title": "K Closest Points to Origin",
     "link": "https://leetcode.com/problems/k-closest-points-to-origin/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 108,
@@ -958,21 +958,21 @@ export const problems = [
     "number": 110,
     "title": "Kth Largest Element in an Array",
     "link": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
-    "sheets": ["Amazon 6M", "Neetcode", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Sean Prashad"]
   },
   {
     "id": 111,
     "number": 111,
     "title": "Kth Smallest Element in a BST",
     "link": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 112,
     "number": 112,
     "title": "Kth Smallest Element in a Sorted Matrix",
     "link": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 113,
@@ -993,14 +993,14 @@ export const problems = [
     "number": 115,
     "title": "Letter Case Permutation",
     "link": "https://leetcode.com/problems/letter-case-permutation/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 116,
     "number": 116,
     "title": "Letter Combinations of a Phone Number",
     "link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 117,
@@ -1021,7 +1021,7 @@ export const problems = [
     "number": 119,
     "title": "Linked List Cycle II",
     "link": "https://leetcode.com/problems/linked-list-cycle-ii/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 120,
@@ -1042,7 +1042,7 @@ export const problems = [
     "number": 122,
     "title": "Longest Consecutive Sequence",
     "link": "https://leetcode.com/problems/longest-consecutive-sequence/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 123,
@@ -1056,21 +1056,21 @@ export const problems = [
     "number": 124,
     "title": "Longest Increasing Subsequence",
     "link": "https://leetcode.com/problems/longest-increasing-subsequence/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 125,
     "number": 125,
     "title": "Longest Palindromic Substring",
     "link": "https://leetcode.com/problems/longest-palindromic-substring/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 126,
     "number": 126,
     "title": "Longest Repeating Character Replacement",
     "link": "https://leetcode.com/problems/longest-repeating-character-replacement/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 127,
@@ -1098,7 +1098,7 @@ export const problems = [
     "number": 130,
     "title": "Longest Substring Without Repeating Characters",
     "link": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   
   {
@@ -1106,14 +1106,14 @@ export const problems = [
     "number": 131,
     "title": "Longest Word in Dictionary",
     "link": "https://leetcode.com/problems/longest-word-in-dictionary/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 132,
     "number": 132,
     "title": "Lowest Common Ancestor of a Binary Tree",
     "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 133,
@@ -1127,7 +1127,7 @@ export const problems = [
     "number": 134,
     "title": "Majority Element",
     "link": "https://leetcode.com/problems/majority-element/",
-    "sheets": ["Amazon 6M", "Sean"]
+    "sheets": ["Amazon 6M", "Sean Prashad"]
   },
   {
     "id": 135,
@@ -1162,91 +1162,91 @@ export const problems = [
     "number": 139,
     "title": "Maximum Average Subarray I",
     "link": "https://leetcode.com/problems/maximum-average-subarray-i/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 140,
     "number": 140,
     "title": "Maximum Binary Tree",
     "link": "https://leetcode.com/problems/maximum-binary-tree/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 141,
     "number": 141,
     "title": "Maximum Depth of Binary Tree",
     "link": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 142,
     "number": 142,
     "title": "Maximum Frequency Stack",
     "link": "https://leetcode.com/problems/maximum-frequency-stack/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 143,
     "number": 143,
     "title": "Maximum Product Subarray",
     "link": "https://leetcode.com/problems/maximum-product-subarray/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 144,
     "number": 144,
     "title": "Maximum Subarray",
     "link": "https://leetcode.com/problems/maximum-subarray/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 145,
     "number": 145,
     "title": "Maximum Width of Binary Tree",
     "link": "https://leetcode.com/problems/maximum-width-of-binary-tree/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 146,
     "number": 146,
     "title": "Maximum XOR of Two Numbers in an Array",
     "link": "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 147,
     "number": 147,
     "title": "Median of Two Sorted Arrays",
     "link": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
-    "sheets": ["Amazon 6M", "Neetcode", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Sean Prashad"]
   },
   {
     "id": 148,
     "number": 148,
     "title": "Meeting Rooms",
     "link": "https://leetcode.com/problems/meeting-rooms/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 149,
     "number": 149,
     "title": "Meeting Rooms II",
     "link": "https://www.geeksforgeeks.org/problems/attend-all-meetings-ii/1",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 150,
     "number": 150,
     "title": "Merge Intervals",
     "link": "https://leetcode.com/problems/merge-intervals/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 151,
     "number": 151,
     "title": "Merge K Sorted Lists",
     "link": "https://leetcode.com/problems/merge-k-sorted-lists/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 152,
@@ -1267,21 +1267,21 @@ export const problems = [
     "number": 154,
     "title": "Merge Two Binary Trees",
     "link": "https://leetcode.com/problems/merge-two-binary-trees/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 155,
     "number": 155,
     "title": "Merge Two Linked Lists",
     "link": "https://leetcode.com/problems/merge-two-sorted-lists/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 156,
     "number": 156,
     "title": "Middle of the Linked List",
     "link": "https://leetcode.com/problems/middle-of-the-linked-list/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 157,
@@ -1316,7 +1316,7 @@ export const problems = [
     "number": 161,
     "title": "Minimum Depth of Binary Tree",
     "link": "https://leetcode.com/problems/minimum-depth-of-binary-tree/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 162,
@@ -1330,7 +1330,7 @@ export const problems = [
     "number": 163,
     "title": "Minimum Height Trees",
     "link": "https://leetcode.com/problems/minimum-height-trees/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 164,
@@ -1351,28 +1351,28 @@ export const problems = [
     "number": 166,
     "title": "Minimum Number of Arrows to Burst Balloons",
     "link": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 167,
     "number": 167,
     "title": "Minimum Number of K Consecutive Bit Flips",
     "link": "https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 168,
     "number": 168,
     "title": "Minimum Size Subarray Sum",
     "link": "https://leetcode.com/problems/minimum-size-subarray-sum/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 169,
     "number": 169,
     "title": "Minimum Window Substring",
     "link": "https://leetcode.com/problems/minimum-window-substring/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 170,
@@ -1386,14 +1386,14 @@ export const problems = [
     "number": 171,
     "title": "Missing Number",
     "link": "https://leetcode.com/problems/missing-number/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 172,
     "number": 172,
     "title": "Move Zeroes",
     "link": "https://leetcode.com/problems/move-zeroes/",
-    "sheets": ["Amazon 6M", "Sean"]
+    "sheets": ["Amazon 6M", "Sean Prashad"]
   },
   {
     "id": 173,
@@ -1449,14 +1449,14 @@ export const problems = [
     "number": 180,
     "title": "Non-Overlapping Intervals",
     "link": "https://leetcode.com/problems/non-overlapping-intervals/",
-    "sheets": ["Neetcode", "Blind", "Sean"]
+    "sheets": ["Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 181,
     "number": 181,
     "title": "N-Queens",
     "link": "https://leetcode.com/problems/n-queens/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 182,
@@ -1470,21 +1470,21 @@ export const problems = [
     "number": 183,
     "title": "Number of Connected Components in an Undirected Graph",
     "link": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 184,
     "number": 184,
     "title": "Number of Islands",
     "link": "https://leetcode.com/problems/number-of-islands/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 185,
     "number": 185,
     "title": "Number of Longest Increasing Subsequence",
     "link": "https://leetcode.com/problems/number-of-longest-increasing-subsequence/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 186,
@@ -1498,21 +1498,21 @@ export const problems = [
     "number": 187,
     "title": "Odd Even Linked List",
     "link": "https://leetcode.com/problems/odd-even-linked-list/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 188,
     "number": 188,
     "title": "Pacific Atlantic Water Flow",
     "link": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
-    "sheets": ["Neetcode", "Blind", "Sean"]
+    "sheets": ["Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 189,
     "number": 189,
     "title": "Palindrome Linked List",
     "link": "https://leetcode.com/problems/palindrome-linked-list/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 190,
@@ -1526,14 +1526,14 @@ export const problems = [
     "number": 191,
     "title": "Palindrome Pairs",
     "link": "https://leetcode.com/problems/palindrome-pairs/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 192,
     "number": 192,
     "title": "Palindrome Partitioning",
     "link": "https://leetcode.com/problems/palindrome-partitioning/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 193,
@@ -1547,14 +1547,14 @@ export const problems = [
     "number": 194,
     "title": "Palindrome Substrings",
     "link": "https://leetcode.com/problems/palindromic-substrings/",
-    "sheets": ["Neetcode", "Blind", "Sean"]
+    "sheets": ["Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 195,
     "number": 195,
     "title": "Partition Equal Subset Sum",
     "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 196,
@@ -1568,7 +1568,7 @@ export const problems = [
     "number": 197,
     "title": "Partition to K Equal Sum Subsets",
     "link": "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 198,
@@ -1582,42 +1582,42 @@ export const problems = [
     "number": 199,
     "title": "Path Sum II",
     "link": "https://leetcode.com/problems/path-sum-ii/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 200,
     "number": 200,
     "title": "Path Sum III",
     "link": "https://leetcode.com/problems/path-sum-iii/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 201,
     "number": 201,
     "title": "Peak index in a mountain array",
     "link": "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
-    "sheets": ["Amazon 6M", "Sean"]
+    "sheets": ["Amazon 6M", "Sean Prashad"]
   },
   {
     "id": 202,
     "number": 202,
     "title": "Permutation in String",
     "link": "https://leetcode.com/problems/permutation-in-string/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 203,
     "number": 203,
     "title": "Permutations",
     "link": "https://leetcode.com/problems/permutations/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 204,
     "number": 204,
     "title": "Permutations II",
     "link": "https://leetcode.com/problems/permutations-ii/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 205,
@@ -1645,14 +1645,14 @@ export const problems = [
     "number": 208,
     "title": "Prefix and Suffix Search",
     "link": "https://leetcode.com/problems/prefix-and-suffix-search/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 209,
     "number": 209,
     "title": "Product of Array Except Self",
     "link": "https://leetcode.com/problems/product-of-array-except-self/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 210,
@@ -1666,14 +1666,14 @@ export const problems = [
     "number": 211,
     "title": "Range Sum Query - Immutable",
     "link": "https://leetcode.com/problems/range-sum-query-immutable/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 212,
     "number": 212,
     "title": "Rearrange String k Distance Apart",
     "link": "https://leetcode.com/problems/rearrange-string-k-distance-apart/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 213,
@@ -1701,35 +1701,35 @@ export const problems = [
     "number": 216,
     "title": "Remove Duplicates from Sorted List",
     "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 217,
     "number": 217,
     "title": "Remove Linked List Elements",
     "link": "https://leetcode.com/problems/remove-linked-list-elements/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 218,
     "number": 218,
     "title": "Remove Nth Node from End of List",
     "link": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 219,
     "number": 219,
     "title": "Reorder List",
     "link": "https://leetcode.com/problems/reorder-list/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 220,
     "number": 220,
     "title": "Reorganize String",
     "link": "https://leetcode.com/problems/reorganize-string/",
-    "sheets": ["Amazon 6M", "Sean"]
+    "sheets": ["Amazon 6M", "Sean Prashad"]
   },
   {
     "id": 221,
@@ -1750,21 +1750,21 @@ export const problems = [
     "number": 223,
     "title": "Reverse Linked List",
     "link": "https://leetcode.com/problems/reverse-linked-list/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 224,
     "number": 224,
     "title": "Reverse Linked List II",
     "link": "https://leetcode.com/problems/reverse-linked-list-ii/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 225,
     "number": 225,
     "title": "Reverse Nodes in k-Group",
     "link": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
-    "sheets": ["Amazon 6M", "Neetcode", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Sean Prashad"]
   },
   {
     "id": 226,
@@ -1778,14 +1778,14 @@ export const problems = [
     "number": 227,
     "title": "Rotate Image",
     "link": "https://leetcode.com/problems/rotate-image/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 228,
     "number": 228,
     "title": "Rotate List",
     "link": "https://leetcode.com/problems/rotate-list/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 229,
@@ -1799,56 +1799,56 @@ export const problems = [
     "number": 230,
     "title": "Same Tree",
     "link": "https://leetcode.com/problems/same-tree/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 231,
     "number": 231,
     "title": "Search a 2D Matrix",
     "link": "https://leetcode.com/problems/search-a-2d-matrix/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 232,
     "number": 232,
     "title": "Search a 2D Matrix II",
     "link": "https://leetcode.com/problems/search-a-2d-matrix-ii/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 233,
     "number": 233,
     "title": "Search in Rotated Sorted Array",
     "link": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 234,
     "number": 234,
     "title": "Search in Rotated Sorted Array II",
     "link": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 235,
     "number": 235,
     "title": "Sequence Reconstruction",
     "link": "https://leetcode.com/problems/sequence-reconstruction/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 236,
     "number": 236,
     "title": "Serialize and Deserialize Binary Tree",
     "link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 237,
     "number": 237,
     "title": "Set Matrix Zeroes",
     "link": "https://leetcode.com/problems/set-matrix-zeroes/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 238,
@@ -1869,21 +1869,21 @@ export const problems = [
     "number": 240,
     "title": "Single Number",
     "link": "https://leetcode.com/problems/single-number/",
-    "sheets": ["Amazon 6M", "Neetcode", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Sean Prashad"]
   },
   {
     "id": 241,
     "number": 241,
     "title": "Sliding Window Maximum",
     "link": "https://leetcode.com/problems/sliding-window-maximum/",
-    "sheets": ["Amazon 6M", "Neetcode", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Sean Prashad"]
   },
   {
     "id": 242,
     "number": 242,
     "title": "Sliding Window Median",
     "link": "https://leetcode.com/problems/sliding-window-median/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 243,
@@ -1897,49 +1897,49 @@ export const problems = [
     "number": 244,
     "title": "Smallest Range Covering Elements from K Lists",
     "link": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 245,
     "number": 245,
     "title": "Sort Characters By Frequency",
     "link": "https://leetcode.com/problems/sort-characters-by-frequency/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 246,
     "number": 246,
     "title": "Sort Colors",
     "link": "https://leetcode.com/problems/sort-colors/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 247,
     "number": 247,
     "title": "Sort Items by Groups Respecting Dependencies",
     "link": "https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 248,
     "number": 248,
     "title": "Sort List",
     "link": "https://leetcode.com/problems/sort-list/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 249,
     "number": 249,
     "title": "Spiral Matrix",
     "link": "https://leetcode.com/problems/spiral-matrix/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 250,
     "number": 250,
     "title": "Split a String Into the Max Number of Unique Substrings",
     "link": "https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 251,
@@ -1953,14 +1953,14 @@ export const problems = [
     "number": 252,
     "title": "Squares of a Sorted Array",
     "link": "https://leetcode.com/problems/squares-of-a-sorted-array/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 253,
     "number": 253,
     "title": "Subarray Product Less Than K",
     "link": "https://leetcode.com/problems/subarray-product-less-than-k/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 254,
@@ -1974,35 +1974,35 @@ export const problems = [
     "number": 255,
     "title": "Subsets",
     "link": "https://leetcode.com/problems/subsets/",
-    "sheets": ["Amazon 6M", "Neetcode", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Sean Prashad"]
   },
   {
     "id": 256,
     "number": 256,
     "title": "Subsets II",
     "link": "https://leetcode.com/problems/subsets-ii/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 257,
     "number": 257,
     "title": "Substring with Concatenation of All Words",
     "link": "https://leetcode.com/problems/substring-with-concatenation-of-all-words/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 258,
     "number": 258,
     "title": "Subtree of Another Tree",
     "link": "https://leetcode.com/problems/subtree-of-another-tree/",
-    "sheets": ["Neetcode", "Blind", "Sean"]
+    "sheets": ["Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 259,
     "number": 259,
     "title": "Sudoku Solver",
     "link": "https://leetcode.com/problems/sudoku-solver/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 260,
@@ -2023,7 +2023,7 @@ export const problems = [
     "number": 262,
     "title": "Swap Nodes in Pairs",
     "link": "https://leetcode.com/problems/swap-nodes-in-pairs/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   },
   {
     "id": 263,
@@ -2044,14 +2044,14 @@ export const problems = [
     "number": 265,
     "title": "Target Sum",
     "link": "https://leetcode.com/problems/target-sum/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 266,
     "number": 266,
     "title": "Task Scheduler",
     "link": "https://leetcode.com/problems/task-scheduler/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 267,
@@ -2079,21 +2079,21 @@ export const problems = [
     "number": 270,
     "title": "Top K Frequent Elements",
     "link": "https://leetcode.com/problems/top-k-frequent-elements/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 271,
     "number": 271,
     "title": "Trapping Rain Water",
     "link": "https://leetcode.com/problems/trapping-rain-water/",
-    "sheets": ["Amazon 6M", "Neetcode", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Sean Prashad"]
   },
   {
     "id": 272,
     "number": 272,
     "title": "Two Sum",
     "link": "https://leetcode.com/problems/two-sum/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 273,
@@ -2107,7 +2107,7 @@ export const problems = [
     "number": 274,
     "title": "Unique Paths",
     "link": "https://leetcode.com/problems/unique-paths/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 275,
@@ -2142,14 +2142,14 @@ export const problems = [
     "number": 279,
     "title": "Valid Sudoku",
     "link": "https://leetcode.com/problems/valid-sudoku/",
-    "sheets": ["Neetcode", "Sean"]
+    "sheets": ["Neetcode", "Sean Prashad"]
   },
   {
     "id": 280,
     "number": 280,
     "title": "Validate Binary Search Tree",
     "link": "https://leetcode.com/problems/validate-binary-search-tree/",
-    "sheets": ["Neetcode", "Sean", "Blind"]
+    "sheets": ["Neetcode", "Sean Prashad", "Blind"]
   },
   {
     "id": 281,
@@ -2163,7 +2163,7 @@ export const problems = [
     "number": 282,
     "title": "Word Break",
     "link": "https://leetcode.com/problems/word-break/",
-    "sheets": ["Neetcode", "Blind", "Sean"]
+    "sheets": ["Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 283,
@@ -2184,21 +2184,21 @@ export const problems = [
     "number": 285,
     "title": "Word Search",
     "link": "https://leetcode.com/problems/word-search/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 286,
     "number": 286,
     "title": "Word Search II",
     "link": "https://leetcode.com/problems/word-search-ii/",
-    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean"]
+    "sheets": ["Amazon 6M", "Neetcode", "Blind", "Sean Prashad"]
   },
   {
     "id": 287,
     "number": 287,
     "title": "Word Squares",
     "link": "https://leetcode.com/problems/word-squares/description/",
-    "sheets": ["Sean"]
+    "sheets": ["Sean Prashad"]
   }
 
 

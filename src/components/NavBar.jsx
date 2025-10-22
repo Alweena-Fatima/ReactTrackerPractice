@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Navbar = () => {
+const Navbar = ({setOption}) => {
     const fixedSnowflakes = [
   { left: '10%', top: '20%', fontSize: '12px' },
   
@@ -14,8 +14,8 @@ const Navbar = () => {
   return (
     <div className="relative bg-slate-800 border-b-2 border-cyan-800 shadow-lg overflow-hidden">
       {/* Animated snow effect */}
-      {/* Static snow */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Static snow
+        <div className="absolute inset-0 pointer-events-none">
         {fixedSnowflakes.map((style, i) => (
           <div
             key={i}
@@ -27,13 +27,15 @@ const Navbar = () => {
         ))}
 
       </div>
+        */}
+      
 
       <div className="flex justify-between items-center px-8 py-4 relative z-10">
         {/* Left Side - Terminal Logo */}
         <div className="flex items-center space-x-2 ml-20">
           <span className="text-cyan-400 text-3xl font-mono animate-pulse">❄️</span>
           <span className="text-cyan-400 text-2xl font-mono font-bold">
-            <span className="text-emerald-400">root@</span>tracker
+            <span className="text-yellow-400">root@</span>tracker
             <span className="animate-pulse">_</span>
           </span>
         </div>
@@ -41,10 +43,10 @@ const Navbar = () => {
         {/* Right Side - Terminal Nav */}
         <ul className="flex space-x-8 font-mono mr-20 text-xl">
           <li className="text-cyan-400 hover:text-emerald-400 cursor-pointer transition duration-300 hover:scale-110">
-            <span className="before:content-['$_'] hover:before:content-['>_']">Home</span>
+            <span className="before:content-['$_'] hover:before:content-['>_']" onClick={()=>{setOption('Home')}}>Home</span>
           </li>
           <li className="text-cyan-400 hover:text-emerald-400 cursor-pointer transition duration-300 hover:scale-110">
-            <span className="before:content-['$_'] hover:before:content-['>_']">About</span>
+            <span className="before:content-['$_'] hover:before:content-['>_']" onClick={()=>{setOption('AboutMe')}}>About</span>
           </li>
           <li className="text-cyan-400 hover:text-emerald-400 transition duration-300 hover:scale-110">
             <a href="#" className="inline-block hover:rotate-12 transition-transform">

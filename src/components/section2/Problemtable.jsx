@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 import ProblemRow from './ProblemRow';
 import SheetDropdown from './SheetDropdown';
 const Problemtable = ({ problems }) => {
-  const fixedSnowflakes = [
-    { left: '10%', top: '20%', fontSize: '12px' },
-    { left: '80%', top: '40%', fontSize: '18px' },
-    { left: '45%', top: '75%', fontSize: '14px' },
-    { left: '90%', top: '10%', fontSize: '16px' },
-    { left: '5%', top: '90%', fontSize: '10px' },
-    { left: '25%', top: '50%', fontSize: '15px' },
-    { left: '65%', top: '5%', fontSize: '11px' },
-    { left: '55%', top: '60%', fontSize: '17px' },
-    { left: '33%', top: '33%', fontSize: '13px' },
-    { left: '72%', top: '85%', fontSize: '16px' },
-  ];
+  // const fixedSnowflakes = [
+  //   { left: '10%', top: '20%', fontSize: '12px' },
+  //   { left: '80%', top: '40%', fontSize: '18px' },
+  //   { left: '45%', top: '75%', fontSize: '14px' },
+  //   { left: '90%', top: '10%', fontSize: '16px' },
+  //   { left: '5%', top: '90%', fontSize: '10px' },
+  //   { left: '25%', top: '50%', fontSize: '15px' },
+  //   { left: '65%', top: '5%', fontSize: '11px' },
+  //   { left: '55%', top: '60%', fontSize: '17px' },
+  //   { left: '33%', top: '33%', fontSize: '13px' },
+  //   { left: '72%', top: '85%', fontSize: '16px' },
+  // ];
   //this usestae for chnaging and selecting the sheets 
   const [selectedSheets, setSelectedSheets] = useState([]);
-  const sheets = ["Sean", "Neetcode", "Blind 75", "Amazon 6M"];
+  const sheets = ["Sean Prashad", "Neetcode", "Blind", "Amazon 6M"];
 
   const handleSheetChange = (sheet) => {
     if (selectedSheets.includes(sheet)) {
@@ -41,9 +41,9 @@ const Problemtable = ({ problems }) => {
 
 
   return (
-    <div className="bg-slate-800 min-h-screen relative overflow-hidden ">
-      {/* Subtle snow effect */}
-      <div className="absolute inset-0 pointer-events-none">
+    <div className="bg-slate-900 min-h-screen relative overflow-hidden ">
+      {/* Subtle snow effect
+        <div className="absolute inset-0 pointer-events-none">
         {fixedSnowflakes.map((style, i) => (
           <div
             key={i}
@@ -55,6 +55,9 @@ const Problemtable = ({ problems }) => {
         ))}
 
       </div>
+        
+        */}
+      
 
       <div className="overflow-x-auto  pt-10 pb-20 relative z-10">
         <div className="bg-slate-800/90 border-2 border-cyan-700 rounded-lg p-6 backdrop-blur-sm shadow-2xl">

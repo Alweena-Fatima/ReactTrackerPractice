@@ -10,7 +10,7 @@ const Section2 = ({ problems }) => {
     problem.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
   return (
-    <div className="bg-slate-800 font-mono ">
+    <div className="bg-slate-900 font-mono ">
       <div className="mx-25">
 
         <input
@@ -39,8 +39,14 @@ const Section2 = ({ problems }) => {
       <div className="mx-25">
         <Problemtable problems={filterProblems} />
       </div>
-
+      {/* Footer command prompt */}
+        <div className="mt-8 text-center">
+          <p className="text-gray-500 font-mono text-sm">
+            <span className="text-emerald-400">$</span> Happy Coding! <span className="animate-pulse">|</span>
+          </p>
+        </div>
     </div>
+    
   );
 };
 

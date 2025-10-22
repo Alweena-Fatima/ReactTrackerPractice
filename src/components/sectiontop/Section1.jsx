@@ -71,7 +71,7 @@ const Section1 = () => {
   },[]);
 
   return (
-    <div className="relative h-[40vh] bg-slate-800 shadow-lg flex flex-row items-center justify-between  text-center overflow-hidden">
+    <div className="relative h-[40vh] bg-slate-900  flex flex-row items-center justify-between  text-center overflow-hidden">
 
       {/* Static snow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -89,7 +89,7 @@ const Section1 = () => {
 
       {/* Left Section - Terminal Style */}
       <div className="text-left ml-25 relative z-10 font-mono">
-        <div className="bg-slate-800/80 border-2 border-cyan-400 p-6 rounded-lg shadow-xl backdrop-blur-sm">
+        <div className="bg-slate-800/80 border-2 border-cyan-700 p-6 rounded-lg shadow-xl backdrop-blur-sm">
           <div className="flex items-center space-x-2 mb-4">
             <span className="text-emerald-400 text-sm">●</span>
             <span className="text-yellow-400 text-sm">●</span>
@@ -97,7 +97,7 @@ const Section1 = () => {
             <span className="text-gray-500 text-xs ml-2">session.log</span>
           </div>
           <h1 className="text-3xl font-bold mb-2 text-cyan-400">
-            <span className="text-emerald-400">$</span>{" "}
+            <span className="text-emerald-400"></span>{" "}
             Welcome,{" "}
             {isEditing ? (
               <input
@@ -123,25 +123,66 @@ const Section1 = () => {
 
       {/* Right Section - Stats Terminal */}
       <div className="text-left mr-25 relative z-10 font-mono">
-        <div className="bg-slate-800/80 border-2 border-emerald-400 p-6 rounded-lg shadow-xl backdrop-blur-sm">
-          <div className="space-y-2">
-            <p className="text-gray-300">
-              <span className="text-cyan-400">total_questions:</span>{' '}
-              <span className="font-semibold text-emerald-400">{TOTAL_QUESTION}</span>
-            </p>
-            <p className="text-gray-300">
-              <span className="text-cyan-400">solved:</span>{' '}
-              <span className="font-semibold text-emerald-400">{totalSolved}</span>
-            </p>
-            <p className="text-gray-300">
-              <span className="text-cyan-400">progress:</span>{' '}
-              <span className="font-semibold text-emerald-400">{((totalSolved/TOTAL_QUESTION)*100).toFixed(1)}</span>
-            </p>
-            <div className="mt-3 h-2 bg-slate-700 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-gradient-to-r from-cyan-400 to-emerald-400 animate-pulse"
-                style={{ width:` ${(totalSolved/TOTAL_QUESTION)*100}%` }}
-              />
+        <div className="bg-slate-800/80 border-2 border-emerald-700 p-6 rounded-lg shadow-xl backdrop-blur-sm">
+          <div className="flex items-center gap-6">
+            {/* Circular Progress Ring */}
+            <div className="relative flex items-center justify-center">
+              <svg className="transform -rotate-90 w-32 h-32">
+                {/* Background circle */}
+                <circle
+                  cx="64"
+                  cy="64"
+                  r="56"
+                  stroke="currentColor"
+                  strokeWidth="8"
+                  fill="none"
+                  className="text-slate-700"
+                />
+                {/* Progress circle */}
+                <circle
+                  cx="64"
+                  cy="64"
+                  r="56"
+                  stroke="url(#gradient)"
+                  strokeWidth="8"
+                  fill="none"
+                  strokeDasharray={`${2 * Math.PI * 56}`}
+                  strokeDashoffset={`${2 * Math.PI * 56 * (1 - totalSolved / TOTAL_QUESTION)}`}
+                  className="transition-all duration-1000 ease-out"
+                  strokeLinecap="round"
+                />
+                {/* Gradient definition */}
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#22d3ee" />
+                    <stop offset="100%" stopColor="#34d399" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              {/* Center text */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <span className="text-3xl font-bold text-emerald-400">
+                  {((totalSolved/TOTAL_QUESTION)*100).toFixed(0)}%
+                </span>
+                <span className="text-xs text-gray-400">complete</span>
+              </div>
+            </div>
+
+            {/* Stats */}
+            <div className="space-y-2">
+              <p className="text-gray-300">
+                <span className="text-cyan-400">total_questions:</span>{' '}
+                <span className="font-semibold text-emerald-400">{TOTAL_QUESTION}</span>
+              </p>
+              <p className="text-gray-300">
+                <span className="text-cyan-400">solved:</span>{' '}
+                <span className="font-semibold text-emerald-400">{totalSolved}</span>
+              </p>
+              <p className="text-gray-300">
+                <span className="text-cyan-400">remaining:</span>{' '}
+                <span className="font-semibold text-yellow-400">{TOTAL_QUESTION - totalSolved}</span>
+              </p>
+              
             </div>
           </div>
         </div>
