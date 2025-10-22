@@ -4,6 +4,7 @@ import ProblemRow from './ProblemRow';
 import SheetDropdown from './SheetDropdown';
 
 const ResetModal = ({ isOpen, onConfirm, onCancel }) => {
+  //pass if confirm or cancel button is clicked to problem table components to reset the progress
   if (!isOpen) return null;
 //backdrop blur will pop up the reset model and blur the home screen
   return (

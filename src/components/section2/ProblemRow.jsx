@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from "react";
 const STORAGE_KEY="problemprogress";
 const ProblemRow = ({ problem, index,handleStorageChange }) => {
+  //this use state will check if problem is done( checkbox is marked) or not 
   const [isDone, setDone] = useState(false);
+
+  //this use sttae will track the last done date of a problem
   const [lastDone, setLastDone] = useState("");
+
+  //this use state will count the revison done (count number of time the checkbox is clicked)
   const [revisonCount,setRevisonCount]=useState(0);
 
-  //now load the progress from local storage 
+  //now load the progress from local storage (if any)
   useEffect(()=>{
     try{
       const raw=localStorage.getItem(STORAGE_KEY);//raw will have object of solved problem like problem id 1 is solved then raw has object isDone is true and lastdate is saved 
-      //raw is in string convert in object
-      const all=raw?JSON.parse(raw):{};
-      const p=all[problem.id];//now all is an object that has id of problem solved by user 
+ 
+      const all=raw?JSON.parse(raw):{};// convert string → object
+
+      const p=all[problem.id];//retrive teh saved progress for this problem using its id 
+
       //p will traverse each problem id of all check if done then setdone setlast else false
       if(p){
-        setDone(Boolean(p.isDone));//returen the boolean state of p 
+        setDone(Boolean(p.isDone));//return the boolean state of p 
         setLastDone(p.lastDone ||"");
         setRevisonCount(p.revisonCount || 0);
 
@@ -27,6 +34,7 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
       console.error("Failed to load progress:", err);
     }
   },[problem.id]);//problem.id makes sure the effect runs only when the rows problem is changed
+  
   //now save state of each problem on local storage 
   const saveProgressForEachproblem=(id,data)=>{
     try{
@@ -34,16 +42,19 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
       //raw is in string convert in object
       const all=raw?JSON.parse(raw):{};
       all[id]=data;
+
       localStorage.setItem(STORAGE_KEY,JSON.stringify(all));
+
       // Dispatch a custom event that Section1 can listen for
       //when box is clicked then function saveP update localstorage and then shout the custom progressUpdate event to whole window
-      //seaction 1 will listen it it 
+      //section 1 will listen it it 
       window.dispatchEvent(new Event("progressUpdated"));
     }catch(err){
       console.error("Failed to saved the progress");
     }
   };
 
+  //this function is for handling checkbox when to disable when to inc count
   const handleCheck = () => {
     const today = new Date().toLocaleDateString('en-CA').split("T")[0];
 
@@ -67,9 +78,9 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
       });
 
     } else {
-      // CASE 2: User is CHECKING the box ---
+      // CASE 2: User is CHECKING the box 
       // The box is currently unchecked.
-      
+  
       let newRevisionCount = revisonCount;
 
       // Only increment the revision count if the last time it was done
@@ -78,10 +89,12 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
         newRevisionCount = Math.min(revisonCount + 1, 3);
       }
 
+      //mark done set the last done date as today and set the revision count and new revision count
       setDone(true);
       setLastDone(today);
       setRevisonCount(newRevisionCount);
 
+      //save the progress or status of each problem in teh local storage 
       saveProgressForEachproblem(problem.id, {
         isDone: true,
         lastDone: today,
@@ -90,6 +103,7 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
     }
   };
   const today = new Date().toLocaleDateString('en-CA').split("T")[0];
+  //if the checkbox is clicked today or problem is done today mark lock true to disable the checkbopx for today
   let lock=isDone && lastDone === today;
 
   return (
@@ -133,7 +147,7 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
       <td className=" p-3 text-center text-amber-200">
           {revisonCount}/3 {revisonCount>=3 && "MASTERED"}
       </td>
-
+      {/* Fade-in animation for smooth row entry */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
