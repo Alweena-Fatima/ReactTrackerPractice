@@ -42,6 +42,33 @@ const Section1 = () => {
       setIsEditing(false); // replace input with text
     }
   };
+  //now getting the total solved problem from the local storage 
+  const [totalSolved,setTotalSolved]=useState(0);
+  const TOTAL_QUESTION=287;
+  useEffect(()=>{
+    const handleStorageChange=()=>{
+      const raw=localStorage.getItem("problemprogress");
+      if(raw){
+        try{
+          const all=JSON.parse(raw);
+          const solvedcount=Object.values(all).filter(p=>p.isDone).length;//filter the all object on the isDOne true condition the get the object length
+          setTotalSolved(solvedcount);
+        }catch(err){
+          console.error("Failed to parse progress:", err);
+        }
+      }else{
+        setTotalSolved(0);
+      }
+    };
+    //progressUpdated shouted by problemrow file listen by this handleStoroage changed in called and function reread the local storage and update the total solved
+    //now yahan tak will only update the bar when you will refresh so add event listener for storage changes
+    window.addEventListener("progressUpdated", handleStorageChange);
+
+  // Initial call
+  handleStorageChange();
+
+  return () => window.removeEventListener("progressUpdated", handleStorageChange);
+  },[]);
 
   return (
     <div className="relative h-[40vh] bg-slate-800 shadow-lg flex flex-row items-center justify-between  text-center overflow-hidden">
@@ -100,20 +127,20 @@ const Section1 = () => {
           <div className="space-y-2">
             <p className="text-gray-300">
               <span className="text-cyan-400">total_questions:</span>{' '}
-              <span className="font-semibold text-emerald-400">500</span>
+              <span className="font-semibold text-emerald-400">{TOTAL_QUESTION}</span>
             </p>
             <p className="text-gray-300">
               <span className="text-cyan-400">solved:</span>{' '}
-              <span className="font-semibold text-emerald-400">120</span>
+              <span className="font-semibold text-emerald-400">{totalSolved}</span>
             </p>
             <p className="text-gray-300">
               <span className="text-cyan-400">progress:</span>{' '}
-              <span className="font-semibold text-emerald-400">24%</span>
+              <span className="font-semibold text-emerald-400">{((totalSolved/TOTAL_QUESTION)*100).toFixed(1)}</span>
             </p>
             <div className="mt-3 h-2 bg-slate-700 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-cyan-400 to-emerald-400 animate-pulse"
-                style={{ width: '24%' }}
+                style={{ width:` ${(totalSolved/TOTAL_QUESTION)*100}%` }}
               />
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 const STORAGE_KEY="problemprogress";
-const ProblemRow = ({ problem, index }) => {
+const ProblemRow = ({ problem, index,handleStorageChange }) => {
   const [isDone, setDone] = useState(false);
   const [lastDone, setLastDone] = useState("");
 
@@ -32,6 +32,10 @@ const ProblemRow = ({ problem, index }) => {
       const all=raw?JSON.parse(raw):{};
       all[id]=data;
       localStorage.setItem(STORAGE_KEY,JSON.stringify(all));
+      // Dispatch a custom event that Section1 can listen for
+      //when box is clicked then function saveP update localstorage and then shout the custom progressUpdate event to whole window
+      //seaction 1 will listen it it 
+      window.dispatchEvent(new Event("progressUpdated"));
     }catch(err){
       console.error("Failed to saved the progress");
     }
