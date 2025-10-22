@@ -1,21 +1,11 @@
 import React, { useState } from 'react';
 import ProblemRow from './ProblemRow';
 import SheetDropdown from './SheetDropdown';
+import ResetModal from './ResetModal';
 const Problemtable = ({ problems }) => {
-  // const fixedSnowflakes = [
-  //   { left: '10%', top: '20%', fontSize: '12px' },
-  //   { left: '80%', top: '40%', fontSize: '18px' },
-  //   { left: '45%', top: '75%', fontSize: '14px' },
-  //   { left: '90%', top: '10%', fontSize: '16px' },
-  //   { left: '5%', top: '90%', fontSize: '10px' },
-  //   { left: '25%', top: '50%', fontSize: '15px' },
-  //   { left: '65%', top: '5%', fontSize: '11px' },
-  //   { left: '55%', top: '60%', fontSize: '17px' },
-  //   { left: '33%', top: '33%', fontSize: '13px' },
-  //   { left: '72%', top: '85%', fontSize: '16px' },
-  // ];
-  //this usestae for chnaging and selecting the sheets 
+
   const [selectedSheets, setSelectedSheets] = useState([]);
+  const [showResetModal, setShowResetModal] = useState(false);
   const sheets = ["Sean Prashad", "Neetcode", "Blind", "Amazon 6M"];
 
   const handleSheetChange = (sheet) => {
@@ -30,35 +20,39 @@ const Problemtable = ({ problems }) => {
     if (selectedSheets.length === 0) {
       return true;
     }
-    
+
     // 2. Check if the problem's 'sheets' array has *at least one*
     //    sheet that is also in the 'selectedSheets' array.
     //    We use .some() for this.
-    return problem.sheets && problem.sheets.some(sheet => 
+    return problem.sheets && problem.sheets.some(sheet =>
       selectedSheets.includes(sheet)
     );
   });
+  const handleReset = () => {
+    setShowResetModal(true);
+  };
+  const confirmReset = () => {
+    try {
+      localStorage.removeItem("problemprogress");
+      localStorage.removeItem("Username");
+      window.location.reload();
+    } catch (err) {
+      console.error("Failed to reset progress:", err);
+      alert("An error occurred while trying to reset your progress.");
+    }
+  };
+  const cancelReset = () => {
+    setShowResetModal(false);
+  };
 
 
   return (
     <div className="bg-slate-900 min-h-screen relative overflow-hidden ">
-      {/* Subtle snow effect
-        <div className="absolute inset-0 pointer-events-none">
-        {fixedSnowflakes.map((style, i) => (
-          <div
-            key={i}
-            className="absolute text-white opacity-70"
-            style={style}
-          >
-            ❄
-          </div>
-        ))}
-
-      </div>
-        
-        */}
-      
-
+    <ResetModal 
+        isOpen={showResetModal} 
+        onConfirm={confirmReset} 
+        onCancel={cancelReset} 
+      />
       <div className="overflow-x-auto  pt-10 pb-20 relative z-10">
         <div className="bg-slate-800/90 border-2 border-cyan-700 rounded-lg p-6 backdrop-blur-sm shadow-2xl">
           {/* Terminal Header */}
@@ -67,7 +61,16 @@ const Problemtable = ({ problems }) => {
             <span className="text-yellow-400 text-sm">●</span>
             <span className="text-red-400 text-sm">●</span>
             <span className="text-gray-400 text-sm ml-2">problems.db</span>
-            
+            <button
+              onClick={handleReset}
+              className="ml-auto flex items-center space-x-1 text-red-400 hover:text-red-300 transition-colors duration-200"
+              title="Reset all progress"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              </svg>
+              <span className="text-sm">Reset</span>
+            </button>
           </div>
 
           <table className="w-full border-collapse font-mono ">
@@ -76,7 +79,7 @@ const Problemtable = ({ problems }) => {
                 <th className="p-3 text-left">#</th>
                 <th className="p-3 text-left">Title</th>
                 <th className="p-3 text-left">
-                  
+
                   {/* 4. Render the component and pass the required props */}
                   <SheetDropdown
                     sheets={sheets}
