@@ -3,11 +3,16 @@ import ProblemRow from './ProblemRow';
 import SheetDropdown from './SheetDropdown';
 import ResetModal from './ResetModal';
 const Problemtable = ({ problems }) => {
-
+  //this use state will save the selected sheetname from the drop down
   const [selectedSheets, setSelectedSheets] = useState([]);
+
+  //this use state will check if user want to reset then blur curr page and popup the reset component
   const [showResetModal, setShowResetModal] = useState(false);
   const sheets = ["Sean Prashad", "Neetcode", "Blind", "Amazon 6M"];
 
+  // When user selects or deselects a sheet:
+  // - If already selected, remove it from selectedSheets
+  // - Otherwise, add it to selectedSheets
   const handleSheetChange = (sheet) => {
     if (selectedSheets.includes(sheet)) {
       setSelectedSheets(selectedSheets.filter((s) => s !== sheet));
@@ -15,32 +20,38 @@ const Problemtable = ({ problems }) => {
       setSelectedSheets([...selectedSheets, sheet]);
     }
   };
+
+  //filter the problem based on selected sheet
   const filteredProblems = problems.filter(problem => {
-    // 1. If no sheets are selected, show all problems
+    //If no sheets are selected, show all problems
     if (selectedSheets.length === 0) {
       return true;
     }
-
-    // 2. Check if the problem's 'sheets' array has *at least one*
-    //    sheet that is also in the 'selectedSheets' array.
-    //    We use .some() for this.
+    //if selectedSheets has at least one selected sheet filter the problem on the sheet name and include the question which are in the selected sheet
     return problem.sheets && problem.sheets.some(sheet =>
       selectedSheets.includes(sheet)
     );
   });
+
+  // set the resetmodel true when user will click the reset button
   const handleReset = () => {
     setShowResetModal(true);
   };
+
+  // now reset logic remove the item from the local storage
   const confirmReset = () => {
     try {
       localStorage.removeItem("problemprogress");
       localStorage.removeItem("Username");
+      //after remove from the local strorage force reload the website 
       window.location.reload();
     } catch (err) {
       console.error("Failed to reset progress:", err);
       alert("An error occurred while trying to reset your progress.");
     }
   };
+
+  //handle cancel reset option
   const cancelReset = () => {
     setShowResetModal(false);
   };
@@ -48,10 +59,11 @@ const Problemtable = ({ problems }) => {
 
   return (
     <div className="bg-slate-900 min-h-screen relative overflow-hidden ">
-    <ResetModal 
-        isOpen={showResetModal} 
-        onConfirm={confirmReset} 
-        onCancel={cancelReset} 
+    {/** call the reset model component */}
+      <ResetModal
+        isOpen={showResetModal}
+        onConfirm={confirmReset}
+        onCancel={cancelReset}
       />
       <div className="overflow-x-auto  pt-10 pb-20 relative z-10">
         <div className="bg-slate-800/90 border-2 border-cyan-700 rounded-lg p-6 backdrop-blur-sm shadow-2xl">
@@ -80,7 +92,7 @@ const Problemtable = ({ problems }) => {
                 <th className="p-3 text-left">Title</th>
                 <th className="p-3 text-left">
 
-                  {/* 4. Render the component and pass the required props */}
+                  {/* call the sheetdrop down component pass the req parameters*/}
                   <SheetDropdown
                     sheets={sheets}
                     selectedSheets={selectedSheets}
@@ -93,9 +105,19 @@ const Problemtable = ({ problems }) => {
               </tr>
             </thead>
             <tbody>
-              {filteredProblems.map((p, index) => (
-                <ProblemRow key={p.id} problem={p} index={index} />
-              ))}
+            {/** if the search query has no matching problem the filterproblem length will be 0 
+              - return no problem 
+              - else map each problem id to  problem row component 
+               
+              */}
+              {filteredProblems.length === 0 ? (
+                <p className="text-center text-emerald-500 mt-4">No problems found 😅</p>
+              ) : (
+                filteredProblems.map((p, index) => (
+                  <ProblemRow key={p.id} problem={p} index={index} />
+                ))
+              )}
+             
             </tbody>
           </table>
         </div>

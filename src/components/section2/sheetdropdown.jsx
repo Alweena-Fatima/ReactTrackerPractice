@@ -1,23 +1,17 @@
-import React, { useState } from 'react'; // <-- 1. Import useState
-
-// 2. Component name is capitalized (PascalCase)
-// 3. Receive props from the parent
+import React, { useState } from 'react';
 const SheetDropdown = ({ sheets, selectedSheets, handleSheetChange }) => {
-  
-  // 4. Add state for managing if the dropdown is open
+  // this use state check is drop down is  open or close do the opposite 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   return (
-    // Note: The `absolute` positioning on the dropdown menu
-    // might look better if the parent `div` has `position: relative`.
-    // I've kept your structure, but added `relative` to the parent div.
     <div className="relative inline-block ml-2"> 
       <button
-        onClick={toggleDropdown} // This function now exists
+        onClick={toggleDropdown} 
         className="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center"
       >
         Sheets
+        {/* Dropdown arrow icon (rotates when open) */}
         <svg
           className={`w-2.5 h-2.5 ms-3 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} // Optional: rotate arrow
           aria-hidden="true"
@@ -35,12 +29,10 @@ const SheetDropdown = ({ sheets, selectedSheets, handleSheetChange }) => {
         </svg>
       </button>
 
-      {/* This variable (`dropdownOpen`) now exists */}
+      {/*if dropdown is open  use map to show all sheets name with check box..  return the selected sheet call handlechange to exceute the logic what to do after selecting the sheet*/}
       {dropdownOpen && (
-        // 5. Added 'right-0' to align dropdown better in a table header
         <div className="absolute right-0 z-10 mt-2 w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-sm">
           <ul className="p-3 space-y-3 text-sm text-gray-700">
-            {/* 6. These variables are now passed in as props */}
             {sheets.map((sheet, idx) => (
               <li key={idx}>
                 <label className="flex items-center cursor-pointer">
@@ -63,4 +55,4 @@ const SheetDropdown = ({ sheets, selectedSheets, handleSheetChange }) => {
   );
 };
 
-export default SheetDropdown; // 7. Export the capitalized name
+export default SheetDropdown; 

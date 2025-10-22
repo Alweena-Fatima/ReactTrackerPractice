@@ -1,12 +1,11 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import Problemtable from './Problemtable';
-
-
 const Section2 = ({ problems }) => {
-  const [searchQuery,setsearchQuery]=useState('');
-  //search query has the text user want to seach use it to filter the problem array
-
-  const filterProblems=problems.filter((problem)=>
+  // Whenever the user types in the search box, we store that value in searchQuery
+  const [searchQuery, setsearchQuery] = useState('');
+  
+  //Filter the problems array based on the user's search input
+  const filterProblems = problems.filter((problem) =>
     problem.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
   return (
@@ -30,23 +29,26 @@ const Section2 = ({ problems }) => {
             focus:ring-1 focus:ring-emerald-500
           "
           value={searchQuery} //getting the query from the text box then sending to setsearch
-          onChange={(e)=>setsearchQuery(e.target.value)}
+          onChange={(e) => setsearchQuery(e.target.value)}
         />
       </div>
-
       {/* --- Problem Table --- */}
-      {/* Added a margin-top to space it from the search bar */}
+      {/* 
+        - The filtered problems are passed to the Problemtable component.
+        - only problems that match the usersearch query are displayed.
+      */}
       <div className="mx-25">
         <Problemtable problems={filterProblems} />
       </div>
-      {/* Footer command prompt */}
-        <div className="mt-8 text-center">
-          <p className="text-gray-500 font-mono text-sm">
-            <span className="text-emerald-400">$</span> Happy Coding! <span className="animate-pulse">|</span>
-          </p>
-        </div>
+      
+      
+      <div className="mt-8 text-center">
+        <p className="text-gray-500 font-mono text-sm">
+          <span className="text-emerald-400">$</span> Happy Coding! <span className="animate-pulse">|</span>
+        </p>
+      </div>
     </div>
-    
+
   );
 };
 
