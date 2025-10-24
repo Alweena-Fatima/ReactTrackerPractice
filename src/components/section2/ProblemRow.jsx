@@ -10,7 +10,10 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
   //this use state will count the revison done (count number of time the checkbox is clicked)
   const [revisonCount,setRevisonCount]=useState(0);
 
-  //now load the progress from local storage (if any)
+ // Load the saved progress from localStorage (if any).
+// Whenever a new problem is rendered (i.e., problem.id changes),
+// this useEffect will run and check the stored progress for that specific problem.
+
   useEffect(()=>{
     try{
       const raw=localStorage.getItem(STORAGE_KEY);//raw will have object of solved problem like problem id 1 is solved then raw has object isDone is true and lastdate is saved 
