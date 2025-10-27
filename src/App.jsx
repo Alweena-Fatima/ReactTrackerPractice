@@ -16,6 +16,7 @@ function App() {
     <Toaster
         toastOptions={{
           // Global base style
+          position:'top-center',
           style: {
             background: '#0d1117',        // GitHub dark background
             color: '#e6edf3',             // GitHub light text
