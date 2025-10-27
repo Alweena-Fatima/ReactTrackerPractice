@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 const fixedSnowflakes = [
   { left: '10%', top: '20%', fontSize: '12px' },
   { left: '80%', top: '40%', fontSize: '18px' },
@@ -30,7 +31,8 @@ const Section1 = () => {
     const savedname=localStorage.getItem('Username');
     if(savedname){
       setName(savedname);
-      setIsEditing(false)
+      setIsEditing(false);
+      
     }
   },[]);
   // Function runs when user leaves the input box
@@ -40,6 +42,7 @@ const Section1 = () => {
       setName(enteredName);
       localStorage.setItem("Username", enteredName);
       setIsEditing(false); // replace input with text
+      toast.success(`git commit -m "User: ${enteredName}" `)
     }
   };
   //now getting the total solved problem from the local storage 
@@ -109,8 +112,8 @@ const Section1 = () => {
               />
             ) : (
               <span className= "text-cyan-400">{name}!</span>
-              
             )}
+            
           </h1>
           <p className="text-gray-300 text-lg">
             <span className="text-purple-400">&gt;&gt;</span> DSA Progress Dashboard
