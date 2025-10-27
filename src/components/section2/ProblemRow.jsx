@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { toast } from 'react-hot-toast';
 const STORAGE_KEY="problemprogress";
 const ProblemRow = ({ problem, index,handleStorageChange }) => {
   //this use state will check if problem is done( checkbox is marked) or not 
   const [isDone, setDone] = useState(false);
-
+  //this usestate check is question is solved or not
+  const [isSolved,setSolved]=useState(false);
   //this use sttae will track the last done date of a problem
   const [lastDone, setLastDone] = useState("");
 
   //this use state will count the revison done (count number of time the checkbox is clicked)
-  const [revisonCount,setRevisonCount]=useState(0);
+  const [revisionCount,setrevisionCount]=useState(0);
 
  // Load the saved progress from localStorage (if any).
 // Whenever a new problem is rendered (i.e., problem.id changes),
@@ -24,14 +26,16 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
 
       //p will traverse each problem id of all check if done then setdone setlast else false
       if(p){
+        setSolved(Boolean(p.isSolved));//boolean state of issolved
         setDone(Boolean(p.isDone));//return the boolean state of p 
         setLastDone(p.lastDone ||"");
-        setRevisonCount(p.revisonCount || 0);
+        setrevisionCount(p.revisionCount || 0);
 
       }else{
+        setSolved(false);
         setDone(false);
         setLastDone("");
-        setRevisonCount(0);
+        setrevisionCount(0);
       }
     }catch (err) {
       console.error("Failed to load progress:", err);
@@ -56,17 +60,40 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
       console.error("Failed to saved the progress");
     }
   };
+  const handleSolvedChange = () => {
+    if (isSolved) {
+      toast.error("error: branch locked → already committed.", { icon: '🔒' });
+      return; 
+    }
+
+    const newSolved = true; // Define the new state
+    setSolved(newSolved);   // Set the state once
+    toast.success(`git commit -m " Solved "`, { icon: '🚀' });
+    //save the progress in local storage
+    saveProgressForEachproblem(problem.id, {
+      isSolved: newSolved, // Use the correct variable
+      isDone,
+      lastDone,
+      revisionCount,
+    });
+  };
 
   //this function is for handling checkbox when to disable when to inc count
   const handleCheck = () => {
-    const today = new Date().toLocaleDateString('en-CA').split("T")[0];
+    //check if problem is Solved or now 
+    if (!isSolved) {
+      // 2. Call toast.error() instead of alert()
+      toast.error(`error: cannot 'git push' before 'git commit'.`, { icon: '😏' });
+      return; // Stop the function
+    }
+    const today = new Date().toLocaleDateString('en-CA');
 
     if (isDone) {
       //CASE 1: User is UNCHECKING the box 
       //allow only when the lastdone date is not today 
       if(lastDone==today){
-        
-        return;
+        toast.error(`error: cooldown active → try 'git push' tomorrow!`, { icon: '⏳' });
+        return;//same day lock
       }
       //here lastdone is not today allow checking
       
@@ -75,37 +102,47 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
       // We keep the revision count, as unchecking shouldn't reset progress.
       
       saveProgressForEachproblem(problem.id, {
+        isSolved:isSolved,
         isDone: false,
         lastDone: "",
-        revisonCount: revisonCount // Keep the existing count
+        revisionCount: revisionCount // Keep the existing count
       });
 
     } else {
       // CASE 2: User is CHECKING the box 
       // The box is currently unchecked.
   
-      let newRevisionCount = revisonCount;
+      let newRevisionCount = revisionCount;
 
       // Only increment the revision count if the last time it was done
       // was NOT today. This prevents multiple increments on the same day.
       if (lastDone !== today) {
-        newRevisionCount = Math.min(revisonCount + 1, 3);
+        newRevisionCount = Math.min(revisionCount + 1, 3);
       }
 
       //mark done set the last done date as today and set the revision count and new revision count
       setDone(true);
       setLastDone(today);
-      setRevisonCount(newRevisionCount);
-
+      setrevisionCount(newRevisionCount);
+      //toast the message (only if the progress is inc)
+      if (newRevisionCount > revisionCount) {
+        if (newRevisionCount >= 3) {
+          toast.success(`git push origin main → ${problem.title} MASTERED!`, { icon: '🎉' });
+        } else {
+          toast.success(`git commit -m "revise: ${newRevisionCount}/3 pushed"`, { icon: '📦' });
+        }
+      }
       //save the progress or status of each problem in teh local storage 
       saveProgressForEachproblem(problem.id, {
+        //save the isSolved again beacuse if user will mark isDone localstorage will change without save isSolved
+        isSolved:isSolved,
         isDone: true,
         lastDone: today,
-        revisonCount: newRevisionCount
+        revisionCount: newRevisionCount
       });
     }
   };
-  const today = new Date().toLocaleDateString('en-CA').split("T")[0];
+  const today = new Date().toLocaleDateString('en-CA');
   //if the checkbox is clicked today or problem is done today mark lock true to disable the checkbopx for today
   let lock=isDone && lastDone === today;
 
@@ -130,8 +167,21 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
           {problem.title}
         </a>
       </td>
+      {/** this is solved check box once user clicked it make the check box disalbe as question is solved */}
       <td className=" p-3 text-white text-l">
         {problem.sheets.join(", ")}
+      </td>
+      <td className="p-3 text-center">
+        <input
+          type="checkbox"
+          checked={isSolved}
+          onChange={handleSolvedChange}
+          // disabled={isSolved} // Disable once solved
+          title={isSolved ? "Already solved " : "Mark as solved"}
+          className={`w-5 h-5 accent-blue-400 transition-transform ${
+            isSolved ? "cursor-not-allowed opacity-60" : "cursor-pointer hover:scale-110"
+          }`} //  added styling for disabled
+        />
       </td>
       <td className=" p-3 text-center">
         <input 
@@ -139,7 +189,7 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
           checked={isDone} 
           onChange={handleCheck}
           /** here when locked variable is true disable the checkbox and show warning */
-          disabled={lock}
+          // disabled={lock}
           title={lock ? "Completed today! Come back tomorrow to revise." : "Mark as done"}
           className="w-5 h-5 accent-emerald-400 cursor-pointer hover:scale-110 transition-transform"
         />
@@ -148,7 +198,7 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
         {lastDone || <span className="text-gray-400">----/--/--</span>}
       </td>
       <td className=" p-3 text-center text-amber-200">
-          {revisonCount}/3 {revisonCount>=3 && "MASTERED"}
+          {revisionCount}/3 {revisionCount>=3 && "MASTERED"}
       </td>
       {/* Fade-in animation for smooth row entry */}
       <style jsx>{`
