@@ -99,7 +99,9 @@ const Problemtable = ({ problems }) => {
                     handleSheetChange={handleSheetChange}
                   />
                 </th>
-                <th className="p-3 text-center">Done</th>
+                <th className="p-3 text-center">Solved</th>
+                <th className="p-3 text-center">Revise</th>
+                
                 <th className="p-3 text-center">Last Done</th>
                 <th className="p-3 text-center">Revison Count</th>
               </tr>
