@@ -51,7 +51,7 @@ const Section1 = () => {
       if(raw){
         try{
           const all=JSON.parse(raw);
-          const solvedcount=Object.values(all).filter(p=>p.isDone).length;//filter the all object on the isDOne true condition the get the object length
+          const solvedcount=Object.values(all).filter(p=>p.isSolved).length;//filter the all object on the isDOne true condition the get the object length
           setTotalSolved(solvedcount);
         }catch(err){
           console.error("Failed to parse progress:", err);
