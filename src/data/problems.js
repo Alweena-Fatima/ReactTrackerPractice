@@ -284,7 +284,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
     "sheets": [
       "Blind",
-      "neetcode",
+      "Neetcode",
       "Sean Prashad"
     ]
   },
@@ -327,7 +327,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/copy-list-with-random-pointer/",
     "sheets": [
       "Amazon 6M",
-      "neetcode"
+      "Neetcode"
     ]
   },
   {
@@ -396,7 +396,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/course-schedule-ii/",
     "sheets": [
       "Amazon 6M",
-      "neetcode",
+      "Neetcode",
       "Sean Prashad"
     ]
   },
@@ -555,7 +555,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/diameter-of-a-binary-tree/",
     "sheets": [
       "Amazon 6M",
-      "neetcode",
+      "Neetcode",
       "Sean Prashad"
     ]
   },
@@ -603,7 +603,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
     "sheets": [
       "Amazon 6M",
-      "neetcode"
+      "Neetcode"
     ]
   },
   {
@@ -773,7 +773,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/generate-parentheses/",
     "sheets": [
       "Amazon 6M",
-      "neetcode",
+      "Neetcode",
       "Sean Prashad"
     ]
   },
@@ -784,7 +784,7 @@ export const problems = [
     "link": "https://www.geeksforgeeks.org/problems/is-it-a-tree/1",
     "sheets": [
       "Amazon 6M",
-      "neetcode",
+      "Neetcode",
       "blind",
       "Sean Prashad"
     ]
@@ -796,7 +796,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/group-anagrams/",
     "sheets": [
       "Amazon 6M",
-      "neetcode",
+      "Neetcode",
       "blind"
     ]
   },
@@ -825,7 +825,7 @@ export const problems = [
     "link": "https://leetcode.com/problems/house-robber/",
     "sheets": [
       "Amazon 6M",
-      "neetcode",
+      "Neetcode",
       "blind",
       "Sean Prashad"
     ]
