@@ -48,13 +48,13 @@ const ResetModal = ({ isOpen, onConfirm, onCancel }) => {
             <div className="flex space-x-3">
               <button
                 onClick={onConfirm}
-                className="flex-1 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-200"
+                className="flex-1 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-200 cursor-pointer"
               >
                 Yes, Reset
               </button>
               <button
                 onClick={onCancel}
-                className="flex-1 bg-slate-700 hover:bg-slate-600 text-cyan-400 font-semibold py-2 px-4 rounded border border-cyan-400 transition-colors duration-200"
+                className="flex-1 bg-slate-700 hover:bg-slate-600 text-cyan-400 font-semibold py-2 px-4 rounded border border-cyan-400 transition-colors duration-200 cursor-pointer"
               >
                 Cancel
               </button>
