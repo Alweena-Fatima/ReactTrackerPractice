@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import ProblemRow from './ProblemRow';
 import SheetDropdown from './SheetDropdown';
-import ResetModal from './ResetModal';
+//import ResetModal from './ResetModal';
+import { toast } from 'react-hot-toast';
+import { confirmResetToast } from './confirmResetToast';
+
 const Problemtable = ({ problems }) => {
   //this use state will save the selected sheetname from the drop down
   const [selectedSheets, setSelectedSheets] = useState([]);
 
   //this use state will check if user want to reset then blur curr page and popup the reset component
-  const [showResetModal, setShowResetModal] = useState(false);
+  //const [showResetModal, setShowResetModal] = useState(false);
+
   const sheets = ["Sean Prashad", "Neetcode", "Blind", "Amazon 6M"];
 
   // When user selects or deselects a sheet:
@@ -35,7 +39,7 @@ const Problemtable = ({ problems }) => {
 
   // set the resetmodel true when user will click the reset button
   const handleReset = () => {
-    setShowResetModal(true);
+    confirmResetToast(confirmReset);
   };
 
   // now reset logic remove the item from the local storage
@@ -45,26 +49,27 @@ const Problemtable = ({ problems }) => {
       localStorage.removeItem("Username");
       //after remove from the local strorage force reload the website 
       window.location.reload();
+
     } catch (err) {
       console.error("Failed to reset progress:", err);
       alert("An error occurred while trying to reset your progress.");
     }
   };
-
-  //handle cancel reset option
-  const cancelReset = () => {
-    setShowResetModal(false);
-  };
-
+  // //handle cancel reset option
+  // const cancelReset = () => {
+  //   setShowResetModal(false);
+  // };
 
   return (
     <div className="bg-slate-900 min-h-screen relative overflow-hidden ">
-    {/** call the reset model component */}
-      <ResetModal
+      {/** call the reset model component 
+        <ResetModal
         isOpen={showResetModal}
         onConfirm={confirmReset}
         onCancel={cancelReset}
       />
+        */}
+      
       <div className="overflow-x-auto  pt-10 pb-20 relative z-10">
         <div className="bg-slate-800/90 border-2 border-cyan-700 rounded-lg p-6 backdrop-blur-sm shadow-2xl">
           {/* Terminal Header */}
@@ -75,7 +80,7 @@ const Problemtable = ({ problems }) => {
             <span className="text-gray-400 text-sm ml-2">problems.db</span>
             <button
               onClick={handleReset}
-              className="ml-auto flex items-center space-x-1 text-red-400 hover:text-red-300 transition-colors duration-200"
+              className="ml-auto flex items-center space-x-1 text-red-400 hover:text-red-300 transition-colors duration-200 cursor-pointer"
               title="Reset all progress"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -83,6 +88,7 @@ const Problemtable = ({ problems }) => {
               </svg>
               <span className="text-sm">Reset</span>
             </button>
+
           </div>
 
           <table className="w-full border-collapse font-mono ">
@@ -101,13 +107,13 @@ const Problemtable = ({ problems }) => {
                 </th>
                 <th className="p-3 text-center">Solved</th>
                 <th className="p-3 text-center">Revise</th>
-                
+
                 <th className="p-3 text-center">Last Done</th>
                 <th className="p-3 text-center">Revison Count</th>
               </tr>
             </thead>
             <tbody>
-            {/** if the search query has no matching problem the filterproblem length will be 0 
+              {/** if the search query has no matching problem the filterproblem length will be 0 
               - return no problem 
               - else map each problem id to  problem row component 
                
@@ -119,7 +125,7 @@ const Problemtable = ({ problems }) => {
                   <ProblemRow key={p.id} problem={p} index={index} />
                 ))
               )}
-             
+
             </tbody>
           </table>
         </div>
