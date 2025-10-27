@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProblemRow from './ProblemRow';
-import SheetDropdown from './SheetDropdown';
+import SheetDropdown from './SheetDropdown.jsx';
 //import ResetModal from './ResetModal';
 import { toast } from 'react-hot-toast';
 import { confirmResetToast } from './confirmResetToast';
