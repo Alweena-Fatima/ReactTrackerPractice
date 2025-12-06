@@ -23,7 +23,7 @@ const Navbar = ({setOption}) => {
           <li className="text-cyan-400 hover:text-emerald-400 cursor-pointer transition duration-300 hover:scale-110">
             <span className="before:content-['$_'] hover:before:content-['>_']" onClick={()=>{setOption('AboutMe')}}>About</span>
           </li>
-          {/* GitHub Icon Link 
+          {
             
             <li className="text-cyan-400 hover:text-emerald-400 transition duration-300 hover:scale-110">
             <a
@@ -42,7 +42,7 @@ const Navbar = ({setOption}) => {
               </svg>
             </a>
           </li>
-            */}
+            }
           
          
         </ul>

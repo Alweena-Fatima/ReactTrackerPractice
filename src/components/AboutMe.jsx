@@ -1,31 +1,8 @@
 import React from 'react';
-
-const fixedSnowflakes = [
-    { left: '15%', top: '15%', fontSize: '10px' },
-    { left: '85%', top: '25%', fontSize: '14px' },
-    { left: '50%', top: '70%', fontSize: '12px' },
-    { left: '92%', top: '8%', fontSize: '16px' },
-    { left: '8%', top: '85%', fontSize: '11px' },
-    { left: '30%', top: '45%', fontSize: '13px' },
-    { left: '70%', top: '10%', fontSize: '10px' },
-    { left: '60%', top: '55%', fontSize: '15px' },
-];
-
 const AboutMe = () => {
     return (
         <div className="relative min-h-screen bg-slate-900 py-12 px-4 overflow-hidden">
-            {/* Static snow background */}
-            <div className="absolute inset-0 pointer-events-none">
-                {fixedSnowflakes.map((style, i) => (
-                    <div
-                        key={i}
-                        className="absolute text-white opacity-40"
-                        style={style}
-                    >
-                        ❄
-                    </div>
-                ))}
-            </div>
+            
 
             <div className="max-w-4xl mx-auto relative z-10">
                 {/* Dashboard Features Terminal */}
@@ -54,8 +31,12 @@ const AboutMe = () => {
                                     Integrated 4 popular problem sheets — <span className="text-emerald-400">Amazon 6M, NeetCode, Blind 75, and Sean Prashad.</span>
                                 </li>
                                 <li>
+                                Powered by <span className="text-pink-400">Google Gemini AI</span> to provide intelligent hints, pseudo-code, and complexity analysis on demand without revealing the full solution.
+                                </li>
+                                <li>
                                     Designed an interactive table to mark problems as solved and automatically record the completion date.
                                 </li>
+                                
                                 <li>
                                     Added a <span className="text-cyan-400">3-day spaced revision system</span> that encourages consistent practice — revision count increases automatically per day.
                                 </li>

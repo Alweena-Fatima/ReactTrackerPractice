@@ -1,17 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
-const fixedSnowflakes = [
-  { left: '10%', top: '20%', fontSize: '12px' },
-  { left: '80%', top: '40%', fontSize: '18px' },
-  { left: '45%', top: '75%', fontSize: '14px' },
-  { left: '90%', top: '10%', fontSize: '16px' },
-  { left: '5%', top: '90%', fontSize: '10px' },
-  { left: '25%', top: '50%', fontSize: '15px' },
-  { left: '65%', top: '5%', fontSize: '11px' },
-  { left: '55%', top: '60%', fontSize: '17px' },
-  { left: '33%', top: '33%', fontSize: '13px' },
-  { left: '72%', top: '85%', fontSize: '16px' },
-];
 
 const Section1 = () => {
   //time current
@@ -76,19 +64,7 @@ const Section1 = () => {
   return (
     <div className="relative h-[40vh] bg-slate-900  flex flex-row items-center justify-between  text-center overflow-hidden">
 
-      {/* Static snow */}
-      <div className="absolute inset-0 pointer-events-none">
-        {fixedSnowflakes.map((style, i) => (
-          <div
-            key={i}
-            className="absolute text-white opacity-70"
-            style={style}
-          >
-            ❄
-          </div>
-        ))}
-
-      </div>
+      
 
       {/* Left Section - Terminal Style */}
       <div className="text-left ml-25 relative z-10 font-mono">
