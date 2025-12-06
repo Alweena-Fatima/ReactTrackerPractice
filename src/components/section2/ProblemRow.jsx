@@ -173,7 +173,7 @@ const ProblemRow = ({ problem, index,handleStorageChange,onShowHint }) => {
       <td className="p-3 text-center">
         <button
           onClick={() => onShowHint(problem)}
-          className="px-3 py-1 bg-cyan-900/40 border border-cyan-500/50 hover:bg-cyan-600 hover:text-white text-cyan-400 text-xs rounded transition-all shadow-sm"
+          className="px-3 py-1 bg-cyan-900/40 border border-cyan-500/50 hover:bg-cyan-600 hover:text-white text-cyan-400 text-xs rounded transition-all shadow-sm cursor-pointer"
         >
           AI Hint
         </button>

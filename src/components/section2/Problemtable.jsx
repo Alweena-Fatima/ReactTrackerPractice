@@ -181,7 +181,7 @@ const Problemtable = ({ problems }) => {
                     </h2>
                     <button
                       onClick={() => setShowPopup(false)}
-                      className="text-gray-500 hover:text-red-400 transition-colors text-2xl leading-none"
+                      className="text-gray-500 hover:text-red-400 transition-colors text-2xl leading-none cursor-pointer"
                     >
                       &times;
                     </button>
