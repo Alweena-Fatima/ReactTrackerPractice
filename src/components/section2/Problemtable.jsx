@@ -161,48 +161,100 @@ const Problemtable = ({ problems }) => {
         </div>
       </div>
 
-      {/* --- ADDED POPUP MODAL --- */}
+      {/* --- UPDATED POPUP MODAL --- */}
       {showPopup && (
-        <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="bg-slate-900 p-6 rounded-lg w-[600px] border border-cyan-500 shadow-xl relative font-mono">
+        <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          
+          <div className="bg-slate-900 p-6 rounded-lg w-full max-w-4xl max-h-[85vh] overflow-y-auto border border-cyan-500 shadow-[0_0_50px_rgba(8,145,178,0.25)] relative font-mono custom-scrollbar">
             
             {isLoading ? (
-               <div className="text-center py-10">
-                  <p className="text-cyan-400 animate-pulse">Initializing Neural Link...</p>
+               <div className="flex flex-col items-center justify-center py-20 space-y-4">
+                  <div className="w-12 h-12 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
+                  <p className="text-cyan-400 animate-pulse tracking-widest">INITIALIZING NEURAL LINK...</p>
                </div>
             ) : (
               <>
-                <h2 className="text-cyan-400 text-xl mb-4 border-b border-gray-700 pb-2">
-                  {hintData?.hint ? `Hint Decoded: ${currentProblem?.title}` : "No Data"}
-                </h2>
-                
-                <div className="space-y-4">
-                  <div>
-                     <span className="text-emerald-400 text-sm font-bold">:: STRATEGY ::</span>
-                     <p className="text-gray-200 text-sm mt-1">{hintData?.hint}</p>
-                  </div>
-
-                  <div>
-                     <span className="text-yellow-400 text-sm font-bold">:: PSEUDO_CODE ::</span>
-                     <pre className="text-gray-200 text-sm bg-slate-950 p-3 rounded mt-1 overflow-x-auto border border-gray-800">
-                       {hintData?.pseudoCode}
-                     </pre>
-                  </div>
-                  
-                  <div className="text-xs text-pink-400">
-                    Complexity: {hintData?.complexity}
-                  </div>
+                <div className="flex justify-between items-start border-b border-gray-700 pb-4 mb-6 sticky top-0 bg-slate-900 z-10">
+                    <h2 className="text-cyan-400 text-xl font-bold flex items-center">
+                       <span className="text-emerald-400 mr-2">➜</span> 
+                       {hintData?.hint ? `Hint: ${currentProblem?.title}` : "No Data"}
+                    </h2>
+                    <button
+                      onClick={() => setShowPopup(false)}
+                      className="text-gray-500 hover:text-red-400 transition-colors text-2xl leading-none"
+                    >
+                      &times;
+                    </button>
                 </div>
+                
+                {/* --- SPLIT LAYOUT (Grid) --- */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    {/* LEFT COLUMN: Hint & Complexity */}
+                    <div className="space-y-6">
+                        <div>
+                             <div className="flex items-center space-x-2 mb-2">
+                                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                                <span className="text-emerald-400 text-sm font-bold tracking-wider">STRATEGY_PROTOCOL</span>
+                             </div>
+                             <div className="bg-slate-950/50 p-4 rounded border-l-2 border-emerald-500/50">
+                                <p className="text-gray-300 text-sm leading-relaxed">{hintData?.hint}</p>
+                             </div>
+                        </div>
 
-                <button
-                  onClick={() => setShowPopup(false)}
-                  className="absolute top-4 right-4 text-gray-500 hover:text-white"
-                >
-                  ✕
-                </button>
+                        <div>
+                            <div className="flex items-center space-x-2 mb-2">
+                                <span className="w-2 h-2 bg-pink-500 rounded-full"></span>
+                                <span className="text-pink-400 text-sm font-bold tracking-wider">COMPLEXITY_ANALYSIS</span>
+                            </div>
+                            <div className="bg-slate-950/50 p-3 rounded border border-pink-500/20 text-pink-300 text-sm">
+                                {hintData?.complexity}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* RIGHT COLUMN: Pseudo Code */}
+                    <div className="flex flex-col h-full">
+                        <div className="flex items-center space-x-2 mb-2">
+                            <span className="w-2 h-2 bg-yellow-400 rounded-full"></span>
+                            <span className="text-yellow-400 text-sm font-bold tracking-wider">ALGORITHM_BLUEPRINT</span>
+                        </div>
+                        <div className="flex-1 bg-slate-950 p-4 rounded border border-gray-800 relative group">
+                           {/* Code Header Decoration */}
+                           <div className="absolute top-2 right-2 flex space-x-1">
+                                <div className="w-2 h-2 rounded-full bg-red-500/20"></div>
+                                <div className="w-2 h-2 rounded-full bg-yellow-500/20"></div>
+                                <div className="w-2 h-2 rounded-full bg-green-500/20"></div>
+                           </div>
+                           
+                           <pre className="text-gray-300 text-xs sm:text-sm font-mono leading-relaxed overflow-x-auto custom-scrollbar h-full">
+                             {hintData?.pseudoCode}
+                           </pre>
+                        </div>
+                    </div>
+
+                </div>
               </>
             )}
           </div>
+
+          {/* Custom Scrollbar Styles for this popup */}
+          <style jsx>{`
+            .custom-scrollbar::-webkit-scrollbar {
+              width: 8px;
+              height: 8px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+              background: #0f172a; 
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+              background: #334155; 
+              border-radius: 4px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+              background: #06b6d4; 
+            }
+          `}</style>
         </div>
       )}
       {/* ------------------------- */}
