@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   try {
     // 3. Call Google Gemini (Securely on the server)
     const genAI = new GoogleGenerativeAI(API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     // STRICT + SHORT + SIMPLE AI PROMPT
     const prompt = `
