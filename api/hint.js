@@ -23,25 +23,30 @@ export default async function handler(req, res) {
 
     // STRICT + SHORT + SIMPLE AI PROMPT
     const prompt = `
-        You are a backend API that MUST output ONLY valid JSON.
+        You are a backend API. You MUST output ONLY valid JSON. No markdown. No extra text.
 
-        Keep everything SHORT and SIMPLE.
-
-        Rules:
-        1. "hint": easy and simple hint to remember in interview.
-        2. "pseudoCode": Java-style, it should be easy and simple. No classes, no imports, no comments.
-        3. "complexity": one short line like "O(n)" and space complexity also.
-        4. NO markdown, NO chat, NO explanations, NO extra text.
-
-        Return ONLY this JSON structure:
+        Your job is to return:
         {
         "hint": "",
         "pseudoCode": "",
         "complexity": ""
         }
 
-        Problem: ${problemTitle}`
-    ;
+        RULES:
+        1. "hint": one simple, beginner-friendly line that helps remember the solution.
+        2. "pseudoCode": very short Java-style pseudocode.
+        - No classes
+        - No imports
+        - No comments
+        - Only simple variable names
+        - Use loops, if-else, arrays, maps as needed.
+        - Keep it 5–10 lines max.
+        3. "complexity": one short line (time + space), e.g., "O(n), O(1)"
+        4. Absolutely NO explanation, NO natural language outside JSON.
+        5. Output must be **pure JSON only**.
+
+        Problem: ${problemTitle}
+    `;
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
