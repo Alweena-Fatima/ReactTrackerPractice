@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { toast } from 'react-hot-toast';
 const STORAGE_KEY="problemprogress";
-const ProblemRow = ({ problem, index,handleStorageChange }) => {
+
+const ProblemRow = ({ problem, index,handleStorageChange,onShowHint }) => {
   //this use state will check if problem is done( checkbox is marked) or not 
   const [isDone, setDone] = useState(false);
   //this usestate check is question is solved or not
@@ -93,7 +94,7 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
       //allow only when the lastdone date is not today 
       if(lastDone==today){
         toast.error(`error: cooldown active → try 'git push' tomorrow!`, { icon: '⏳' });
-        return;//same day lock
+        return;//same day lock
       }
       //here lastdone is not today allow checking
       
@@ -167,6 +168,18 @@ const ProblemRow = ({ problem, index,handleStorageChange }) => {
           {problem.title}
         </a>
       </td>
+      
+      {/* --- ADDED AI HINT BUTTON INSIDE A TD --- */}
+      <td className="p-3 text-center">
+        <button
+          onClick={() => onShowHint(problem)}
+          className="px-3 py-1 bg-cyan-900/40 border border-cyan-500/50 hover:bg-cyan-600 hover:text-white text-cyan-400 text-xs rounded transition-all shadow-sm"
+        >
+          AI Hint
+        </button>
+      </td>
+      {/* ---------------------------------------- */}
+
       {/** this is solved check box once user clicked it make the check box disalbe as question is solved */}
       <td className=" p-3 text-white text-l">
         {problem.sheets.join(", ")}

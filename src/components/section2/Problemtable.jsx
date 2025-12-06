@@ -4,6 +4,8 @@ import SheetDropdown from './SheetDropdown';
 //import ResetModal from './ResetModal';
 import { toast } from 'react-hot-toast';
 import { confirmResetToast } from './confirmResetToast';
+// --- IMPORT THE HELPER ---
+import { getProblemHint } from '../../utils/aiHelper'; 
 
 const Problemtable = ({ problems }) => {
   //this use state will save the selected sheetname from the drop down
@@ -60,6 +62,31 @@ const Problemtable = ({ problems }) => {
   //   setShowResetModal(false);
   // };
 
+  // --- ADDED AI STATE & HANDLER ---
+  const [showPopup, setShowPopup] = useState(false);
+  const [hintData, setHintData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+ const [currentProblem, setCurrentProblem] = useState(null);
+  const handleShowHint = async (problem) => {
+    setShowPopup(true);
+    setHintData(null); // Clear old data
+    setIsLoading(true); // Start loading
+    setCurrentProblem(problem);
+
+    // Call the helper function
+    const data = await getProblemHint(problem.title);
+    
+    if (data) {
+      setHintData(data);
+    } else {
+      toast.error("AI connection failed");
+      setShowPopup(false);
+    }
+    setIsLoading(false);
+  };
+  // --------------------------------
+ 
+
   return (
     <div className="bg-slate-900 min-h-screen relative overflow-hidden ">
       {/** call the reset model component 
@@ -96,6 +123,9 @@ const Problemtable = ({ problems }) => {
               <tr className="bg-slate-700 text-cyan-400  border-cyan-400 text-xl">
                 <th className="p-3 text-left">#</th>
                 <th className="p-3 text-left">Title</th>
+                {/* ADDED HEADER FOR AI */}
+                <th className="p-3 text-center">AI Hint</th>
+                
                 <th className="p-3 text-left">
 
                   {/* call the sheetdrop down component pass the req parameters*/}
@@ -116,13 +146,13 @@ const Problemtable = ({ problems }) => {
               {/** if the search query has no matching problem the filterproblem length will be 0 
               - return no problem 
               - else map each problem id to  problem row component 
-               
+                
               */}
               {filteredProblems.length === 0 ? (
                 <p className="text-center text-emerald-500 mt-4">No problems found 😅</p>
               ) : (
                 filteredProblems.map((p, index) => (
-                  <ProblemRow key={p.id} problem={p} index={index} />
+                  <ProblemRow key={p.id} problem={p} index={index} onShowHint={handleShowHint}/>
                 ))
               )}
 
@@ -130,6 +160,52 @@ const Problemtable = ({ problems }) => {
           </table>
         </div>
       </div>
+
+      {/* --- ADDED POPUP MODAL --- */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-slate-900 p-6 rounded-lg w-[600px] border border-cyan-500 shadow-xl relative font-mono">
+            
+            {isLoading ? (
+               <div className="text-center py-10">
+                  <p className="text-cyan-400 animate-pulse">Initializing Neural Link...</p>
+               </div>
+            ) : (
+              <>
+                <h2 className="text-cyan-400 text-xl mb-4 border-b border-gray-700 pb-2">
+                  {hintData?.hint ? `Hint Decoded: ${currentProblem?.title}` : "No Data"}
+                </h2>
+                
+                <div className="space-y-4">
+                  <div>
+                     <span className="text-emerald-400 text-sm font-bold">:: STRATEGY ::</span>
+                     <p className="text-gray-200 text-sm mt-1">{hintData?.hint}</p>
+                  </div>
+
+                  <div>
+                     <span className="text-yellow-400 text-sm font-bold">:: PSEUDO_CODE ::</span>
+                     <pre className="text-gray-200 text-sm bg-slate-950 p-3 rounded mt-1 overflow-x-auto border border-gray-800">
+                       {hintData?.pseudoCode}
+                     </pre>
+                  </div>
+                  
+                  <div className="text-xs text-pink-400">
+                    Complexity: {hintData?.complexity}
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => setShowPopup(false)}
+                  className="absolute top-4 right-4 text-gray-500 hover:text-white"
+                >
+                  ✕
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+      {/* ------------------------- */}
 
       <style jsx>{`
         @keyframes fall {
